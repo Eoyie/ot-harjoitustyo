@@ -1,5 +1,13 @@
-5 directories, 7 files
+## Vähän meni sekavaks (piti esim. ite oppia miten palata vanhaan committiin), mut lopputulos KAI oikein.
 
+commit c3b637c5168e89e5542a015ed60f01b11ba8c358
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 23:55:34 2023 +0200
+
+    mitä tapahtuu
+
+ tiedostoja/file2 | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
 
 commit 1885e0fea17d5814f1b9a55ebe2d9ced73d867e9
 Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
@@ -114,6 +122,3 @@ Date:   Mon Mar 20 21:34:51 2023 +0200
 
  tiedosto.txt | 0
  1 file changed, 0 insertions(+), 0 deletions(-)
-
-
-
