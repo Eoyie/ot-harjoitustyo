@@ -7,3 +7,5 @@ ja *tääämä* on kursivoitu!!
 
 [gitlog.txt](laskarit/viikko1/gitlog.txt) //
 [komentorivi.txt](laskarit/viikko1/komentorivi.txt)
+
+### Tämä on massiivinen muutos tiedostoon
