@@ -1,3 +1,6 @@
+Tämä on muutos tiedostoon
+
+
 kurssit
 └── ot2023
     └── viikko1
