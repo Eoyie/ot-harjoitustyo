@@ -1,0 +1,119 @@
+5 directories, 7 files
+
+
+commit 1885e0fea17d5814f1b9a55ebe2d9ced73d867e9
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 23:11:43 2023 +0200
+
+    korjaus....
+
+ tiedostoja/{file1 => file22} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 85017e238e5ae4f16e9dc05fd424b8f59c4f2363
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 22:56:04 2023 +0200
+
+    hupsis
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 70be6d8084dfbffc30ed4f11b89ca4cd451a6522
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 22:09:15 2023 +0200
+
+    add reviews
+
+ eka.txt      |  59 +-----------------
+ kolmas.txt   |   6 +-
+ tiedosto.txt | 191 -----------------------------------------------------------
+ 3 files changed, 8 insertions(+), 248 deletions(-)
+
+commit 7e6dcbfbde3a2eae630779979e73add9a9044acf
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 22:03:14 2023 +0200
+
+    change name
+
+ eka.txt | 191 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 191 insertions(+)
+
+commit e2ac11128ff03fdcf5880b5e011a0e4aca2461a3
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 22:00:54 2023 +0200
+
+    delete toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 381082a4b52c90d22813256359b2f96148bf416d
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:56:54 2023 +0200
+
+    del&add more bee
+
+ tiedosto.txt | 112 ++++++++++++++++++++++++++++++++++++++++++-----------------
+ 1 file changed, 80 insertions(+), 32 deletions(-)
+
+commit 8f4dae0d053692eb3aafcc432caa6dbaa910eb8a
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:54:50 2023 +0200
+
+    add bee
+
+ tiedosto.txt | 144 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 143 insertions(+), 1 deletion(-)
+
+commit 17a01fd8505e2a3efe33835224807f009d9ed04d
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:47:53 2023 +0200
+
+    stuff lisäys
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 954293f213fd03e49863e1b5438b5c4cd5d60cc8
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:46:06 2023 +0200
+
+    2&3 muutos
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 0c4c05a05151a6dd15848486aa5d51c1f5c02d56
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:42:33 2023 +0200
+
+    kolmas lisäys
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit cbc3b437e34eb6d5a2443d838b3b3302abdd5cb9
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:38:43 2023 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit e9d579d19d9400a31c40d78f5042bbda3edf3107
+Author: Sanni Isokirmo <sanni.isokirmo@helsinki.fi>
+Date:   Mon Mar 20 21:34:51 2023 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+
+
