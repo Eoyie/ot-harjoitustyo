@@ -11,3 +11,8 @@ ja *tääämä* on kursivoitu!!
 ### Tämä on massiivinen muutos tiedostoon
 
 **HUI KAMALAA**
+
+
+---------------------------------------------------------------------------------------------
+
+[vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
