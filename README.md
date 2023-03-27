@@ -15,5 +15,5 @@ ja *tääämä* on kursivoitu!!
 
 ---------------------------------------------------------------------------------------------
 
-[vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md)
+[vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md) //
 [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
