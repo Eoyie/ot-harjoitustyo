@@ -42,3 +42,13 @@ class Kassapaate:
             self.kassassa_rahaa += summa
         else:
             return
+
+
+    def kassa(self):                    #Tiedän, että tämä ei ole oikea suunta
+        return self.kassassa_rahaa      #tehdä tehtävää, mutta en osannut toista keinoa ja
+                                        #halusin silti yrittää tehdä tehtävät loppuun....
+    def maukas(self):                   #Toivottavasti oikeat vastaukset tulevat esille
+        return self.maukkaat
+    
+    def edullinen(self):
+        return self.edulliset
