@@ -20,6 +20,6 @@ ja *tääämä* on kursivoitu!!
 
 ---------------------------------------------------------------------------------------------
 
-[Monopoli.md](laskarit/viikko3/Monopoli.md)
-[Machine Sekvenssikaavio](laskarit/viikko3/Machine_Sekvenssikaavio.jpeg)
-[HSL Sekvenssikaavio](laskarit/viikko3/HSL_Sekvenssikaavio.jpeg)
+[Monopoli.md](laskarit/viikko3/Monopoli.md) //
+[Machine Sekvenssikaavio](laskarit/viikko3/Machine_Sekvenssikaavio.jpeg) //
+[HSL Sekvenssikaavio](laskarit/viikko3/HSL_Sekvenssikaavio.jpeg) //
