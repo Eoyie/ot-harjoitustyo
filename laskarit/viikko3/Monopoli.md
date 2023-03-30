@@ -10,20 +10,20 @@
 ```mermaid
  classDiagram
       Player -->  Monopoly
-      Monopoly -->  Board
-      Monopoly -->  Dice
-      Board -->  Tile
-      Tile --> StartTile
-      Tile --> Prison
-      Tile --> Chance
-      Tile --> CommunityChest
-      Chance --> Deck
-      CommunityChest --> Deck
-      Tile --> Tax
-      Tile --> Ownables
-      Ownables --> Street
-      Ownables --> Railroad
-      Ownables --> Utilities
+      Monopoly <--  Board
+      Monopoly <--  Dice
+      Board <--  Tile
+      Tile <-- StartTile
+      Tile <-- Prison
+      Tile <-- Chance
+      Tile <-- CommunityChest
+      Chance <-- Deck
+      CommunityChest <-- Deck
+      Tile <-- Tax
+      Tile <-- Ownables
+      Ownables <-- Street
+      Ownables <-- Railroad
+      Ownables <-- Utilities
       class Player{
           - username
           - piece
