@@ -29,6 +29,7 @@
           - username
           - piece
           - bank
+          - cardList
           createPlayer()
           pickPiece()
       }
@@ -46,6 +47,7 @@
           checkTile()
           playerMove()
           checkMoney()
+          useCard()
       }
       class Board{
           - board[40]
