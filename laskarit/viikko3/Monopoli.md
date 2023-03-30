@@ -1,7 +1,9 @@
 ```mermaid
  classDiagram
-      Todo "*" --> "1" User
-      Test "1" --> "1" User
+      Player -->  Monopoly
+      Monopoly -->  Board
+      Monopoly -->  Dice
+      Board -->  Tile
       class Player{
           - username
           createPlayer()
@@ -9,21 +11,33 @@
       class Monopoly{
           - playersList[2,8]
           - currentPlayer
+          - playerPiece[1]
           - board
           - dice
           - tile
           getNumOfPlayers()
+          getPlayerPiece()
           getBoard()
           rollDice()
+          checkTile()
           playerMove()
       }
       class Board{
-          -
+          - board
+          - currentTile
+          - neighbourTile
+          makeBoard() #?
+          getCurrentTile()
+          getNeighbourTile()
       }
       class Dice{
-          test
+          - Dices[2]
+          roll()
       }
       class Tile{
-          test
+          - tileName
+          - tilePos
+          - tileType
+          
       }
 ```
