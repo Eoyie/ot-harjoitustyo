@@ -17,3 +17,9 @@ ja *tääämä* on kursivoitu!!
 
 [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md) //
 [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
+
+---------------------------------------------------------------------------------------------
+
+[Monopoli.md](laskarit/viikko3/Monopoli.md)
+[Machine Sekvenssikaavio](laskarit/viikko3/Machine Sekvenssikaavio.jpeg)
+[HSL Sekvenssikaavio](laskarit/viikko3/HSL Sekvenssikaavio)
