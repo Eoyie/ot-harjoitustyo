@@ -17,6 +17,9 @@
       Tile --> Prison
       Tile --> Chance
       Tile --> CommunityChest
+      Chance --> Deck
+      CommunityChest --> Deck
+      Tile --> Tax
       Tile --> Ownables
       Ownables --> Street
       Ownables --> Railroad
