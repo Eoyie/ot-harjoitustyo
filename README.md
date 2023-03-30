@@ -21,5 +21,5 @@ ja *tääämä* on kursivoitu!!
 ---------------------------------------------------------------------------------------------
 
 [Monopoli.md](laskarit/viikko3/Monopoli.md)
-[MachineSekvenssikaavio](laskarit/viikko3/Machine Sekvenssikaavio.jpeg)
-[HSLSekvenssikaavio](laskarit/viikko3/HSL Sekvenssikaavio)
+[Machine Sekvenssikaavio](laskarit/viikko3/Machine\ Sekvenssikaavio.jpeg)
+[HSL Sekvenssikaavio](laskarit/viikko3/HSL\ Sekvenssikaavio)
