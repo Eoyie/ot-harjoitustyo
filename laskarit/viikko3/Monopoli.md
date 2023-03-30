@@ -2,16 +2,28 @@
  classDiagram
       Todo "*" --> "1" User
       Test "1" --> "1" User
-      class User{
-          username
-          password
+      class Player{
+          - username
+          createPlayer()
       }
-      class Todo{
-          id
-          content
-          done
+      class Monopoly{
+          - playersList[2,8]
+          - currentPlayer
+          - board
+          - dice
+          - tile
+          getNumOfPlayers()
+          getBoard()
+          rollDice()
+          playerMove()
       }
-      class Test{
+      class Board{
+          -
+      }
+      class Dice{
+          test
+      }
+      class Tile{
           test
       }
 ```
