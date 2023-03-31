@@ -1,6 +1,6 @@
 ```mermaid
   classDiagram
-    Exp --> User
+    Exp "*" --> "1" User
     class Exp{
         - id
         - product
