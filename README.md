@@ -1,3 +1,5 @@
+## Viikko 1
+
 # Tämä on otsikko
 
 Tämä taas on normaalia tekstiä, kun taas **tämä** on lihavoitu
@@ -14,12 +16,14 @@ ja *tääämä* on kursivoitu!!
 
 
 ---------------------------------------------------------------------------------------------
+## Viikko 2
 
 [vaatimusmaarittely.md](dokumentaatio/vaatimusmaarittely.md) //
 [tuntikirjanpito.md](dokumentaatio/tuntikirjanpito.md)
 
 ---------------------------------------------------------------------------------------------
+## Viikko 3
 
-[Monopoli.md](laskarit/viikko3/Monopoli.md)
-[Machine Sekvenssikaavio](laskarit/viikko3/Machine\ Sekvenssikaavio.jpeg)
-[HSL Sekvenssikaavio](laskarit/viikko3/HSL\ Sekvenssikaavio)
+[Monopoli.md](laskarit/viikko3/Monopoli.md) //
+[Machine Sekvenssikaavio](laskarit/viikko3/Machine_Sekvenssikaavio.jpeg) //
+[HSL Sekvenssikaavio](laskarit/viikko3/HSL_Sekvenssikaavio.jpeg) //
