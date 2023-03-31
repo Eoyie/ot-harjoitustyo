@@ -21,5 +21,6 @@
         - username
         - password
         login(username, password)
+        logout()
      }
 ```
