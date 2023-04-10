@@ -8,4 +8,6 @@
 | 4.4 | 4 | tutkin lisää ohjelman tekemistä, koska koin aloittamisen hyvin vaikeaksi. **!!Tässä vaiheessa osa on siis hyvin samanlaista, kuin referenssisovellus, koska testailin!!** Tein pari luokkaa, joilla ei vielä toimivuutta. Lisäksi vähän pääohjelmaa ja siihen testit ja yritin aloittaa UI puolta. Tein muut tehtävänannon osuudet, kuten invoke ja changelog|
 | 8.4 | 1 | Tein paperille hahmotteluja koodista |
 | | 1 | Ajattelin lisää koodin perustoimivuuksia. Tutkin kurssin vaatimuuksia harjoitustyöstä ja muutin joitakin suunnitelmia tämän perusteella | 
-| 9.8 | 2 | Yritin saada toimintoa SQLalchemyn ja Flaskin kautta, mutta en saanut mitään toimimaan. En halunnut käyttää samaa, kuin referessisovelluksessa, mutta en näköjään osaa muuta |
+| 9.4 | 2 | Yritin saada toimintoa SQLalchemyn ja Flaskin kautta, mutta en saanut mitään toimimaan. En halunnut käyttää samaa, kuin referessisovelluksessa, mutta en näköjään osaa muuta |
+| | 3 | Koska en saanut muuta toimimaan tein referenssi ja oppimateriaalin perusteella tietokantaa ym. |
+| 10.4 | - | Jatkuu |
