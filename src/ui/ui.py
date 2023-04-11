@@ -8,9 +8,10 @@ class UI:
 
     def start(self):
 
-        self.show_exp_view()
+        #self.show_exp_view()
+        self.show_t_view()
 
-    def show_exp_view(self):
+    '''def show_exp_view(self):
         self.hide_current_view()
 
         a = ttk.Label(master=self.root, text = "Heipä hei, tämä on testi :)")
@@ -36,7 +37,14 @@ class UI:
         c.pack()
         #self.current_view = ExpView(self.root, self.show_exp_view)
 
-        #self.current_view.pack()
+        #self.current_view.pack() '''
+    
+    def show_t_view(self):
+        self.hide_current_view()
+
+        self.current_view = ExpView(self.root)
+
+        self.current_view.pack()
 
     def hide_current_view(self):
 

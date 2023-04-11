@@ -1,9 +1,9 @@
-#from respositories.expire_repository import (expire_repository as default_expire_repository)    En vielä osaa
+
 
 class Expire:
     def __init__(self):
         self.exp_repository = []        # Tässä vaiheessa toteutan vain listalla, koska en vielä osaa repositery osuutta!!
-    
+
     #def check_product_in_list(self, product):
 
     def add_product(self, product):

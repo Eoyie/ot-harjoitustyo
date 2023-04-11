@@ -1,8 +1,8 @@
 from invoke import task
 
 @task
-def foo(ctx):
-    print("bar")
+def build(ctx):
+    ctx.run("python src/intialize_database.py")
 
 @task
 def start(ctx):
