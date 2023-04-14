@@ -11,3 +11,4 @@
 | 9.4 | 2 | Yritin saada toimintoa SQLalchemyn ja Flaskin kautta, mutta en saanut mitään toimimaan. En halunnut käyttää samaa, kuin referessisovelluksessa, mutta en näköjään osaa muuta |
 | | 3 | Koska en saanut muuta toimimaan tein referenssi ja oppimateriaalin perusteella tietokantaa ym. |
 | 10.4 | 4 | Edistin koodia, mutta ei vielä toimi (jää repositoryyn kiinni) |
+| 14.4 | 2 | Yritin korjailla koodia. (Ei vielä toimi) |
