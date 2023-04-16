@@ -12,3 +12,4 @@
 | | 3 | Koska en saanut muuta toimimaan tein referenssi ja oppimateriaalin perusteella tietokantaa ym. |
 | 10.4 | 4 | Edistin koodia, mutta ei vielä toimi (jää repositoryyn kiinni) |
 | 14.4 | 2 | Yritin korjailla koodia. (Ei vielä toimi) |
+| 15.4 | 3 | Päätin vaihtaa UI lähestymistapaa referessisovelluksesta toiseen, jonka löysin netistä. Ei ole vielä yhdistetty repositoryyn, mutta vaikuttaa lupaavalta |
