@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def build(ctx):
-    ctx.run("python src/intialize_database.py")
+    ctx.run("python src/build.py")
 
 @task
 def start(ctx):
