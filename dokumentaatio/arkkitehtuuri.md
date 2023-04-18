@@ -1,3 +1,6 @@
+## Alustava pakkauskaavio
+
+![Pakkausrakenne](./kuvat/alustava_pakkauskaavio.png)
 
 ## Luokkakaavio
 
@@ -12,9 +15,7 @@
         - status
         add_Product()
         delete_Product()
-        spoiled_Product()
-        used_Product()
-        check_Product()
+        expired_Product()
         get_Product_List()
         get_Usabled_Product_List()
         get_Spoiled_Product_List()
