@@ -1,6 +1,6 @@
 ## Alustava pakkauskaavio
 
-Luultavasti molemmat alustavat kaaviot tulevat muuttumaan hieman. Ihan ulkonäön puolesta
+- Luultavasti molemmat alustavat kaaviot tulevat muuttumaan hieman. Ihan ulkonäön puolesta.
 
 ![Pakkausrakenne](./kuvat/Exp_alustava_pakkauskaavio.png)
 
