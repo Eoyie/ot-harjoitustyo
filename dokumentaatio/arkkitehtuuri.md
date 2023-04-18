@@ -2,6 +2,10 @@
 
 ![Pakkausrakenne](./kuvat/Exp_alustava_pakkauskaavio.png)
 
+## Alustava pakkaus/luokkakaavio
+
+![Rakenne](./kuvat/alustava_paakaavio.png)
+
 ## Luokkakaavio
 
 ```mermaid
