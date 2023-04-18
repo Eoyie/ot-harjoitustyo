@@ -16,6 +16,10 @@ def test(ctx):
 def coverage(ctx):
     ctx.run("coverage run --branch -m pytest src", pty=True)
 
-@task(coverage) # Miksi on erilainen?? Katsoin vain mallia.
+@task(coverage)
 def coverage_report(ctx):
     ctx.run("coverage html", pty=True)
+
+@task
+def lint(ctx):
+    ctx.run("pylint src", pty=True)

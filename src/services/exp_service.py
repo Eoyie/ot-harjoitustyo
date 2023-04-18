@@ -1,6 +1,6 @@
 from entities.exp import Exp
 
-from repositories.expire_repository import ( 
+from repositories.expire_repository import (
     exp_repository as default_exp_repository )
 
 class ExpService:
@@ -13,14 +13,14 @@ class ExpService:
         product = Exp(product=product)#, type=type, date=date)
 
         return self.exp_repository.create(product)
-    
+
     def get_ok_products(self):
 
         products = self.exp_repository.read2()
-        ok_products = filter(lambda product: not product.expired, products)
+        #ok_products = filter(lambda product: not product.expired, products)
 
         return products
-    
+
     def set_product_expired(self, exp_id):
         self.exp_repository.set_expired(exp_id)
 

@@ -1,6 +1,4 @@
 from database_connection import get_database_connection
-''' Hyvin samanlainen, kuin referenssisovellus, 
-mutta en tiedä miten muuttaa/onko tämä pakko muuttaa '''
 
 def drop_tables(connection):
 
@@ -12,7 +10,7 @@ def drop_tables(connection):
 
 
 def create_tables(connection):
-    
+
     cursor = connection.cursor()
     cursor.execute("""
         create table users (

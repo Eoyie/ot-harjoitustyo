@@ -7,9 +7,9 @@ class ExpRepository:
         self.file_path = file_path
 
     def ensure_file_exists(self):
-        Path(self.file_path).touch() 
+        Path(self.file_path).touch()
 
-    def find_all(self): #Miksi tämä?
+    def find_all(self):
         return self.read()
 
     def read(self):
@@ -26,14 +26,14 @@ class ExpRepository:
                 #type = part[2]
                 #date = part[3]
                 expired = part[2] = "1"
-                '''username = part[5]
+                #username = part[5]
 
-                user = user_repository.find_by_username(username) if username else None'''
+                #user = user_repository.find_by_username(username) if username else None
 
                 products.append(Exp(product, expired, exp_id))
-                
+
         return products
-    
+
     def read2(self):
         products = []
         self.ensure_file_exists()
@@ -50,9 +50,9 @@ class ExpRepository:
                 expired = part[2] = "1"
 
                 products.append((product, expired, exp_id))
-                
+
         return products
-    
+
     def create(self, product):
 
         products = self.find_all()
@@ -62,7 +62,7 @@ class ExpRepository:
         self.write(products)
 
         return product
-    
+
     def write(self, products):
         self.ensure_file_exists()
 
@@ -72,19 +72,20 @@ class ExpRepository:
                 row = f"{product.id};{product.product};{product.expired}"
 
                 file.write(row+"\n")
-    
+
     def set_expired(self, exp_id, expired = True):
         products = self.find_all()
         for product in products:
             if product.id == exp_id:
                 product.expired = expired
-        
+
         self.write(products)
 
     def delete_product(self, product_num):
         products = self.find_all()
         products_left = []
-        
+
+        # Tulee muuttumaan. Väliaikainen ratkaisu :)
         for i in range(len(products)):
             if i != product_num:
                 products_left.append(products[i])
