@@ -15,3 +15,4 @@
 | 15.4 | 3 | Päätin vaihtaa UI lähestymistapaa referessisovelluksesta toiseen, jonka löysin netistä. Ei ole vielä yhdistetty repositoryyn, mutta vaikuttaa lupaavalta |
 | 17.4 | 1 | Tajusin missä virhe ui:n ja repositoryn välillä oli ja korjasin sen! |
 | 18.4 | 3.5 | Tein loput tämän viikon palautuksista loppuun. Testejä tekemässä taisin tajuta mikä ongelma oli repositorisien kanssa, mutta nyt ei ollut aikaa muuttaa sitä! En tehnyt myöskään tämän takia paljon testejä väliaikaisella koodilla. |
+|yht.|26,5||
