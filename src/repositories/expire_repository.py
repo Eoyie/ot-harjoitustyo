@@ -81,11 +81,15 @@ class ExpRepository:
         
         self.write(products)
 
-    def delete_product(self, exp_id):
+    def delete_product(self, product_num):
         products = self.find_all()
-        products_without_id = filter(lambda product: product.id != exp_id, products)
+        products_left = []
+        
+        for i in range(len(products)):
+            if i != product_num:
+                products_left.append(products[i])
 
-        self.write(products_without_id)
+        self.write(products_left)
 
     def delete_all(self):
         self.write([])

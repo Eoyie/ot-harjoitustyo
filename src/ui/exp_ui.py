@@ -82,6 +82,9 @@ class ExpView:
         self.entry_box.delete(0,END)
 
     def delete_product(self):
+        for item in self.lb.curselection():
+            product_num = item
+        exp_service.delete_product(product_num)
         self.lb.delete(ANCHOR)
 
     def set_product_expired(self):

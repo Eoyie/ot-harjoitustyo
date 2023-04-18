@@ -24,4 +24,8 @@ class ExpService:
     def set_product_expired(self, exp_id):
         self.exp_repository.set_expired(exp_id)
 
+    def delete_product(self, product_num):
+
+        self.exp_repository.delete_product(product_num)
+
 exp_service = ExpService()
