@@ -5,6 +5,7 @@ def main():
 
     window = Tk()
     window.title("Expire application (test stage)")
+    window.geometry("500x500")
 
     ui_view = UI(window)
     ui_view.start() 

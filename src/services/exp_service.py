@@ -16,10 +16,10 @@ class ExpService:
     
     def get_ok_products(self):
 
-        products = self.exp_repository.find_all()
+        products = self.exp_repository.read2()
         ok_products = filter(lambda product: not product.expired, products)
 
-        return list(ok_products)
+        return products
     
     def set_product_expired(self, exp_id):
         self.exp_repository.set_expired(exp_id)

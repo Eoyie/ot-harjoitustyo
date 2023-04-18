@@ -1,188 +1,91 @@
 from tkinter import ttk, constants
 from services.exp_service import exp_service
+from tkinter import *
 
-class ExpView:
-    def __init__(self, root):         #Hyvin vaiheessa
+class ExpView:              
+    def __init__(self, root):
         self.root = root
         self.frame = None
-        self.create_product_entry = None
-        self.product_type = None
-        self.product_date = None
-        self.exp_list_frame = None
-        self.exp_list_view = None
-        
-        self.initialize()
+        self.lb = None
+        self.entry_box = None
 
-    def destroy(self):
-        self.frame.destroy()
+        self.initialize()
 
     def pack(self):
         self.frame.pack(fill=constants.X)
 
     def initialize(self):
-
         self.frame = ttk.Frame(master=self.root)
-        self.exp_list_frame = ttk.Frame(master=self.frame)
 
-        self.initialize_header()
-        self.initialize_product_list()
-        self.initialize_footer()
+        self.initialize_listbox()
+        self.initialize_entrybox()
+        self.initialize_menu()
 
-        self.exp_list_frame.grid(
-            row = 1,
-            column = 0,
-            columnspan = 2,
-            sticky = constants.EW
-        )
+    def initialize_listbox(self):
 
-        self.frame.grid_columnconfigure(0, weight=1, minsize=400)
-        self.frame.grid_columnconfigure(1, weight=0)
-   
-    def initialize_header(self):
-        nothing_label = ttk.Label(
-            master = self.frame,
-            text = "There is nothing important up here yet :)"
-        )
+        lb_frame = Frame(self.root)
+        lb_frame.pack(pady=10)
 
-        nothing_button = ttk.Button( 
-            master = self.frame,
-            text = "Useless button"
+        self.lb = Listbox(
+            lb_frame,
+            font=("Carier",10),
+            width=20,
+            height=20,
+            bg="#F0F0F0",
+            bd=3,
+            fg="#464646",
+            highlightthickness=0,
+            selectbackground="#a6a6a6",
+            activestyle="none"
             )
-
-        nothing_label.grid(
-            row=0, 
-            column=0, 
-            padx=5, 
-            pady=5, 
-            sticky=constants.W
-        )
-
-        nothing_button.grid(
-            row=0,
-            column=4,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
-    
-    def initialize_product_list(self):
-        if self.exp_list_view:
-            self.exp_list_view.destroy()
-
-        products = exp_service.get_ok_products()
-
-        self.exp_list_view = ExpListView(
-            self.exp_list_frame,
-            products,
-            self.handle_set_product_expired
-        )
-
-        self.exp_list_view.pack()
-
-    def handle_set_product_expired(self, exp_id):
-        exp_service.set_product_expired(exp_id)
-        self.initialize_product_list()
-
-    def initialize_footer(self):
-        self.create_product_entry = ttk.Entry(master = self.frame)
-        #self.product_type = ttk.Entry(master = self.frame)
-        #self.product_date = ttk.Entry(master = self.frame)
-
-        add_product_button = ttk.Button(
-            master = self.frame,
-            text = "Add Product",
-            command = self.handle_add_product
-        )
+        lb_scrollbar = Scrollbar(lb_frame)
         
-        self.create_product_entry.grid(
-            row=2,
-            column=1,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
-        '''self.product_type.grid(
-            row=2,
-            column=2,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
-        self.product_date.grid(
-            row=2,
-            column=3,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
-        '''
-        add_product_button.grid(
-            row=2,
-            column=4,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
+        self.lb.pack(side=LEFT,fill=BOTH)
+        lb_scrollbar.pack(side=RIGHT,fill=BOTH)
 
-    def handle_add_product(self):
-        p_name = self.create_product_entry.get()
-        #p_type = self.product_type.get()
-        #p_date = self.product_date.get()
-
-        if p_name:#and p_type and p_date:
-            exp_service.add_product(p_name)
-            self.initialize_product_list()
-            self.create_product_entry.delete(0,constants.END)
-            #self.product_type.delete(0,constants.END)
-            #self.product_date.delete(0,constants.END)
-
-    def show_exp_view(self):
-        self.frame = ttk.Frame(master=self.root)
-        self.exp_list_frame = ttk.Frame(master=self.frame)
-
-
-
-
-class ExpListView:
+        self.lb.config(yscrollcommand=lb_scrollbar.set)
+        lb_scrollbar.config(command=self.lb.yview)
+        
+        products = exp_service.get_ok_products()
+        if products != None:
+            for product in products:
+                self.lb.insert(END,product[0])
     
-    def __init__(self, root, products, handle_set_product_expired):
-        self.root = root
-        self.products = products
-        self.handle_set_product_expired = handle_set_product_expired
-        self.frame = None
+    def initialize_entrybox(self):
+        self.entry_box = Entry(self.root, font="Courier, 14")
+        self.entry_box.pack(pady=20)
 
-        self.initialize()
-    
-    def destroy(self):
-        self.frame.destroy()
+        e_button_frame = Frame(self.root)
+        e_button_frame.pack(pady=10)
 
-    def pack(self):
-        self.frame.pack(fill=constants.X)
+        add_button = Button(e_button_frame, text="Add Product", command=self.add_product)
+        del_button = Button(e_button_frame, text="Delete Product", command=self.delete_product)
+        exp_button = Button(e_button_frame, text="Product Expired", command=self.set_product_expired)
 
-    def initialize(self):
-        self.frame = ttk.Frame(master = self.root)
+        add_button.grid(row=0,column=0)
+        del_button.grid(row=0,column=1, padx=20)
+        exp_button.grid(row=0,column=2)
 
-        for product in self.products:
-            self.initialize_product(product)
+    def initialize_menu(self):
+        menu_ = Menu(self.root)
+        self.root.config(menu=menu_)
 
-    def initialize_product(self, product):
-        product_frame = ttk.Frame(master = self.frame)
-        label = ttk.Label(master=product_frame, text=product.content)
+        file_m = Menu(menu_, tearoff=False)
+        menu_.add_cascade(label="File", menu=file_m)
 
-        set_expired_button = ttk.Button(
-            master = product_frame,
-            text = "Expired/Used",
-            command = lambda: self.handle_set_product_expired(product.id)
-        )
-        label.grid(row=0, column=0, padx=5, pady=5, sticky=constants.W)
+        file_m.add_command(label="Save List", command=self.save_list)
 
-        set_expired_button.grid(
-            row=0,
-            column=1,
-            padx=5,
-            pady=5,
-            sticky=constants.EW
-        )
+    def add_product(self):
+        p_name = self.entry_box.get()
+        self.lb.insert(END,p_name)
+        exp_service.add_product(p_name)
+        self.entry_box.delete(0,END)
 
-        product_frame.grid_columnconfigure(0, weight=1)
-        product_frame.pack(fill=constants.X)
+    def delete_product(self):
+        self.lb.delete(ANCHOR)
+
+    def set_product_expired(self):
+        pass
+
+    def save_list(self):
+        pass

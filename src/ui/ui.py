@@ -9,7 +9,7 @@ class UI:
     def start(self):
 
         #self.show_exp_view()
-        self.show_t_view()
+        self.show_test_view()
 
     '''def show_exp_view(self):
         self.hide_current_view()
@@ -39,7 +39,7 @@ class UI:
 
         #self.current_view.pack() '''
     
-    def show_t_view(self):
+    def show_test_view(self):
         self.hide_current_view()
 
         self.current_view = ExpView(self.root)

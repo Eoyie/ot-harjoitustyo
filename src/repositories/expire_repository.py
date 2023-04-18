@@ -33,10 +33,8 @@ class ExpRepository:
                 products.append(Exp(product, expired, exp_id))
                 
         return products
-
-    def create(self, product):
-
-        #products = self.find_all
+    
+    def read2(self):
         products = []
         self.ensure_file_exists()
 
@@ -50,9 +48,17 @@ class ExpRepository:
                 #type = part[2]
                 #date = part[3]
                 expired = part[2] = "1"
-                products.append(Exp(product, expired, exp_id))
+
+                products.append((product, expired, exp_id))
                 
+        return products
+    
+    def create(self, product):
+
+        products = self.find_all()
+
         products.append(product)
+
         self.write(products)
 
         return product
