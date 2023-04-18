@@ -1,6 +1,6 @@
 ## Alustava pakkauskaavio
 
-![Pakkausrakenne](./kuvat/alustava_pakkauskaavio.png)
+![Pakkausrakenne](./kuvat/Exp_alustava_pakkauskaavio.png)
 
 ## Luokkakaavio
 
