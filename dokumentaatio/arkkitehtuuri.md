@@ -5,11 +5,12 @@
 ![Pakkausrakenne](./kuvat/Exp_alustava_pakkauskaavio.png)
 
 ## Alustava pakkaus/luokkakaavio
+- ui jäänyt turha class osio. Tämäkin tulee muuttuumaan.
 
 ![Rakenne](./kuvat/alustava_paakaavio.png)
 
-## Luokkakaavio
-
+## Alustava luokkakaavio
+- En tiedä lopullisia kommentojen nimiä :)
 ```mermaid
   classDiagram
     Exp "*" --> "1" User
@@ -21,7 +22,7 @@
         - status
         add_Product()
         delete_Product()
-        expired_Product()
+        set_product_expired()
         get_Product_List()
         get_Usabled_Product_List()
         get_Spoiled_Product_List()
