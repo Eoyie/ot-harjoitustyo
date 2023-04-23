@@ -15,4 +15,7 @@
 | 15.4 | 3 | Päätin vaihtaa UI lähestymistapaa referessisovelluksesta toiseen, jonka löysin netistä. Ei ole vielä yhdistetty repositoryyn, mutta vaikuttaa lupaavalta |
 | 17.4 | 1 | Tajusin missä virhe ui:n ja repositoryn välillä oli ja korjasin sen! |
 | 18.4 | 3,5 | Tein loput tämän viikon palautuksista loppuun. Testejä tekemässä taisin tajuta mikä ongelma oli repositorisien kanssa, mutta nyt ei ollut aikaa muuttaa sitä! En tehnyt myöskään tämän takia paljon testejä väliaikaisella koodilla. |
-|yht.|26,5||
+| 22.4 | 3 | Edistin ui:ta ja korjasin asioita (esim. read2 ei tarvita)
+| 23.4 | 5 | Päädyin vaihtamaan ListBoxista TreeViewiin ihan vain, koska halusin mieluiten 3 eri tyyppiä + vanhentuneet + päivämäärät näkyvinä, n. 1-2h tutkin asiaa ja 3-4h aloin muuttamaan koodia |
+| | 1.5 | Yritin saada tkcalenderia toimimaan, jotta expiry datea ei tarvitsisi kirjoittaa manuaalisesti. Ehkä ei toimi poetryn takia, mutta odotan kommenttia discordista, koska netistä en löytänyt apua.|
+|yht.|-||
