@@ -37,4 +37,4 @@
 ```
 ## Sekvenssikaavio tuotteen lisäyksestä 
 
-![Tuotteen lisäys](./kuvat/Exp_Sekvenssikaavio.jpeg)
+![Tuotteen lisäys](./kuvat/Exp_sekvenssikaavio.jpeg)
