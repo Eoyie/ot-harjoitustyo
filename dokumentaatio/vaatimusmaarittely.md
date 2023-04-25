@@ -13,13 +13,13 @@ Suunnitelmissa olisi pitää vain yksikäyttäjä, jolla olisi tarvitut oikeudet
 
 Selitin jo hieman aiemmin ideaa, mutta tässä lista:
 
-- Voi lisätä tuotteita ja näiden pvm. # Osittain tehty. Ei ole pvm. #
+- Voi lisätä tuotteita ja näiden pvm. # **Tehty**
 - Tuotteet tulevat sovellukseen siinä järjestyksessä, mikä ensin vanhenee.
-- Toimisi oikeassa ajassa mahdollisesti tai käyttäjä itse poistaa tuotteet näiden käytettyään. # Myös osittain. Voi itse poistaa #
+- Toimisi oikeassa ajassa mahdollisesti tai käyttäjä itse poistaa tuotteet näiden käytettyään. # Myös osittain. **Voi itse poistaa** 
 - Mahdollisesti kirjautuminen, jossa käyttäjätunnus ja salasana.
 
 ## Jatkokehitysideat
 
-- Voisi kirjata mitä tuotteille tapahtui (Käytettiin, pilaantui jne.)
-- Ryhmittely
+- Voisi kirjata mitä tuotteille tapahtui (Käytettiin, pilaantui jne.) # **Tehty**
+- Ryhmittely # **Tehty**
 - Tietojen editointi/muutaminen
