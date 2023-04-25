@@ -35,3 +35,6 @@
         logout()
      }
 ```
+## Sekvenssikaavio tuotteen lisäyksestä
+
+![Tuotteen lisäys](./kuvat/Exp_Sekvenssikaavio.jpeg)
