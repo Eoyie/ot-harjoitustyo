@@ -10,3 +10,10 @@
 - ui sinäänsä toimiva, Delete ja Add toimii, muut ei.
 - Hieman ongelmia id ym. kanssa, mutta tässä vaiheessa voi lisätä tuotteen ja sovellus tallentaa sen muistiin.
 - Poisto tapahtuu id ongelmien vuoksi tällä hetkellä vain lista numeron perusteella.
+
+## Viikko 3 (kurssin viikko 6)
+
+- Saatu perus ohjelma toimimaan, jossa voi:
+- Lisätä tuotteen tämän nimen, tyypin ja päivän kanssa.
+- Voi kokonaan poistaa tuotteen (Kaikki tapahtuu nyt normaalisti oikean id:n kanssa ym.)
+- Voi siirtää tuotteen toisele parentille treeviewissä, jolloin tuote on "käytetty/vanhentunut"
