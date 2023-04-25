@@ -19,14 +19,10 @@
         - product
         - date
         - type
-        - status
         add_Product()
-        delete_Product()
-        set_product_expired()
-        get_Product_List()
-        get_Usabled_Product_List()
-        get_Spoiled_Product_List()
-        get_Used_Product_List()
+        delete_product()
+        set_expired()
+        set_used()
      }
      class User{
         - username
@@ -37,4 +33,4 @@
 ```
 ## Sekvenssikaavio tuotteen lisäyksestä 
 
-![Tuotteen lisäys](./kuvat/Exp_sekvenssikaavio.jpeg)
+![Tuotteen lisäys](./kuvat/Exp_sekvenssikaavio.png)
