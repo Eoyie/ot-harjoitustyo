@@ -16,7 +16,7 @@ Selitin jo hieman aiemmin ideaa, mutta tässä lista:
 - Voi lisätä tuotteita ja näiden pvm. # **Tehty**
 - Tuotteet tulevat sovellukseen siinä järjestyksessä, mikä ensin vanhenee.
 - Toimisi oikeassa ajassa mahdollisesti tai käyttäjä itse poistaa tuotteet näiden käytettyään. # Myös osittain. **Voi itse poistaa** 
-- Mahdollisesti kirjautuminen, jossa käyttäjätunnus ja salasana. # Jos aikaa lisätään, mutta en näe oikeastaan tarvetta...
+- Mahdollisesti kirjautuminen, jossa käyttäjätunnus ja salasana. # Jos aikaa lisätään, mutta en näe oikeastaan tarvetta... #
 
 ## Jatkokehitysideat
 
