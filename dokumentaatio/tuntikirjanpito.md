@@ -18,4 +18,6 @@
 | 22.4 | 3 | Edistin ui:ta ja korjasin asioita (esim. read2 ei tarvita)
 | 23.4 | 5 | Päädyin vaihtamaan ListBoxista TreeViewiin ihan vain, koska halusin mieluiten 3 eri tyyppiä + vanhentuneet + päivämäärät näkyvinä ja listboxina tämä olisi hieman rasittavaa. n. 1-2h pohdin/tutkin asiaa ja 3-4h aloin muuttamaan koodia |
 | | 1.5 | Yritin saada tkcalenderia toimimaan, jotta expiry datea ei tarvitsisi kirjoittaa manuaalisesti. Ehkä ei toimi poetryn takia, mutta odotan kommenttia discordista, koska netistä en löytänyt apua.|
-|yht.|-||
+| 24.4 | 4 | Sain perusohjelman toimimaan kokonaisuudessaan. |
+| 25.5 | 2 | Tein tarvittavat asiat Viikko5 palautuksia varten. |
+|yht.|42||
