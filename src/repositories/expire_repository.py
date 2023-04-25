@@ -21,35 +21,15 @@ class ExpRepository:
                 row = row.replace("\n", "")
                 part = row.split(";")
 
-                exp_id = part[0]
+                p_id = part[0]
                 product = part[1]
-                #type = part[2]
-                #date = part[3]
-                expired = part[2] = "1"
+                date = part[2]
+                p_type = part[3]
                 #username = part[5]
 
                 #user = user_repository.find_by_username(username) if username else None
 
-                products.append(Exp(product, expired, exp_id))
-
-        return products
-
-    def read2(self):
-        products = []
-        self.ensure_file_exists()
-
-        with open(self.file_path, encoding="utf-8") as file:
-            for row in file:
-                row = row.replace("\n", "")
-                part = row.split(";")
-
-                exp_id = part[0]
-                product = part[1]
-                #type = part[2]
-                #date = part[3]
-                expired = part[2] = "1"
-
-                products.append((product, expired, exp_id))
+                products.append(Exp(product, date, p_type, p_id))
 
         return products
 
@@ -68,27 +48,32 @@ class ExpRepository:
 
         with open(self.file_path, "w", encoding="utf-8") as file:
             for product in products:
-                #exp_string = "1" if product.expired else "0"
-                row = f"{product.id};{product.product};{product.expired}"
+                row = f"{product.id};{product.product};{product.date};{product.type}"
 
                 file.write(row+"\n")
 
-    def set_expired(self, exp_id, expired = True):
+    def set_expired(self, p_id):
+        return self.set_stage(p_id,3)
+
+    def set_used(self, p_id):
+        return self.set_stage(p_id,4)
+
+    def set_stage(self,p_id,stage):
         products = self.find_all()
         for product in products:
-            if product.id == exp_id:
-                product.expired = expired
-
+            if product.id == p_id:
+                product.type = stage
+                s_product = product
         self.write(products)
+        return s_product
 
-    def delete_product(self, product_num):
+    def delete_product(self, exp_id):
         products = self.find_all()
         products_left = []
 
-        # Tulee muuttumaan. Väliaikainen ratkaisu :)
-        for i in range(len(products)):
-            if i != product_num:
-                products_left.append(products[i])
+        for i in products:
+            if i.id != exp_id:
+                products_left.append(i)
 
         self.write(products_left)
 

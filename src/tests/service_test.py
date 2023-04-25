@@ -7,17 +7,17 @@ class TestExpService(unittest.TestCase):
         self.exp_service = ExpService(FakeExpRepository())
 
     def test_adding_product(self):
-        self.exp_service.add_product('This is a test!')
-        products = self.exp_service.get_ok_products()
+        self.exp_service.add_product('This is a test!','20-02-2002',1)
+        products = self.exp_service.get_all_products()
 
         self.assertEqual(len(products), 1)
         self.assertEqual(products[0].product, 'This is a test!')
 
     def test_delete_product(self):
-        self.exp_service.add_product('This is a test!')
-        self.exp_service.add_product('This is a test2!')
-        self.exp_service.delete_product(1)
-        products = self.exp_service.get_ok_products()
+        a = self.exp_service.add_product('This is a test!','20-02-2002',1)
+        b = self.exp_service.add_product('This is a test2!','20-02-2002',2)
+        self.exp_service.delete_product(b.id)
+        products = self.exp_service.get_all_products()
 
         self.assertEqual(len(products), 1)
         self.assertEqual(products[0].product, 'This is a test!')
@@ -30,13 +30,13 @@ class FakeExpRepository:
         self.products.append(product)
         return product
 
-    def read2(self):
+    def find_all(self):
         return self.products
 
-    def delete_product(self, product_num):
+    def delete_product(self, p_id):
         products_left = []
-        for i in range(len(self.products)):
-            if i != product_num:
-                products_left.append(self.products[i])
+        for i in self.products:
+            if i.id != p_id:
+                products_left.append(i)
 
         self.products = products_left

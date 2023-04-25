@@ -6,8 +6,8 @@ class TestExpRepository(unittest.TestCase):
     def setUp(self):
         exp_repository.delete_all()
 
-        self.maito = Exp('Maito')
-        self.leipa = Exp('Leipä')
+        self.maito = Exp('Maito',"20-02-2002",0)
+        self.leipa = Exp('Leipä',"02-12-2020",2)
 
     def test_add_product(self):
         exp_repository.create(self.maito)
@@ -19,8 +19,13 @@ class TestExpRepository(unittest.TestCase):
     def test_delete_product(self):
         exp_repository.create(self.maito)
         exp_repository.create(self.leipa)
-        exp_repository.delete_product(1)
+        exp_repository.delete_product(self.leipa.id)
         products = exp_repository.find_all()
 
         self.assertEqual(len(products), 1)
         self.assertEqual(products[0].product, 'Maito')
+
+        exp_repository.delete_product(self.maito.id)
+        products = exp_repository.find_all()
+
+        self.assertEqual(len(products), 0)
