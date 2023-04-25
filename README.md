@@ -1,6 +1,6 @@
 # ExpireApp
 
-Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta ja tilasta. Voit lisätä tuotteen jääkaappiin, pakastimeen tai kaappiin ja merkitä, kun se on joko käytetty tai vanhentunut.
+Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta. Voit lisätä tuotteen jääkaappiin, pakastimeen tai kaappiin ja merkitä, kun se on joko käytetty tai vanhentunut.
 ! **En vielä kirjoita asioita, jotka eivät ole ohjelmassa** !
 
 ## Dokumentaatio
