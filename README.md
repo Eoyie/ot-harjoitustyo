@@ -9,7 +9,7 @@ Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta ja til
 ## Asennus
 1. Ladattuasi tiedoston koneelle, siirry terminaalissa tämän hakemistoon ja asenna riippuvuudet komennolla:
 
-```bash
+```
 poetry install
 ```
 
