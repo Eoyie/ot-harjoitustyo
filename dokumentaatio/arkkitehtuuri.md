@@ -19,7 +19,7 @@
         - product
         - date
         - type
-        add_Product()
+        add_product()
         delete_product()
         set_expired()
         set_used()
