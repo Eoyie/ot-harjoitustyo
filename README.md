@@ -8,33 +8,33 @@ Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta ja til
 
 ## Asennus
 1. Ladattuasi tiedoston koneelle, siirry terminaalissa tämän hakemistoon ja asenna riippuvuudet komennolla:
-´´´bash
+```
 poetry install
-´´´
+```
 2. Alusta ohjelma käyttöä varten komennolla:
-´´´bash
+```
 poetry run invoke build
-´´´
+```
 3. Ja viimeisenä käynnistä ohjelma komennolla:
-´´´
+```
 poetry run invoke start
-´´´
+```
 
 ## Komentorivitoiminnot
 
 - Ohjelma suoritetaan komennolla:
-´´´
+```
 poetry run invoke start
-´´´
+```
 - Ohjelman testit suoritetaan komennolla:
-´´´
+```
 poetry run invoke test
-´´´
+```
 - Ohjelman testikattavuuden saat generoitua komennolla, joka generoi raportin htmlcov-hakemistoon:
-´´´
+```
 poetry run invoke coverage-report
-´´´
+```
 - Pylint tarkistukset saat komennolla:
-´´´
+```
 poetry run invoke lint
-´´´
+```
