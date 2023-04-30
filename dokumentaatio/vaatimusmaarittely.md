@@ -14,7 +14,7 @@ Suunnitelmissa olisi pitää vain yksikäyttäjä, jolla olisi tarvitut oikeudet
 Selitin jo hieman aiemmin ideaa, mutta tässä lista:
 
 - Voi lisätä tuotteita ja näiden pvm. # **Tehty**
-- Tuotteet tulevat sovellukseen siinä järjestyksessä, mikä ensin vanhenee.
+- Tuotteet tulevat sovellukseen siinä järjestyksessä, mikä ensin vanhenee. # **Tehty**, mutta vielä vasta, kun ohjelma avataan.
 - Toimisi oikeassa ajassa mahdollisesti tai käyttäjä itse poistaa tuotteet näiden käytettyään. # Myös osittain. **Voi itse poistaa** 
 - Mahdollisesti kirjautuminen, jossa käyttäjätunnus ja salasana. # Jos aikaa lisätään, mutta en näe oikeastaan tarvetta... #
 
