@@ -19,5 +19,7 @@
 | 23.4 | 5 | Päädyin vaihtamaan ListBoxista TreeViewiin ihan vain, koska halusin mieluiten 3 eri tyyppiä + vanhentuneet + päivämäärät näkyvinä ja listboxina tämä olisi hieman rasittavaa. n. 1-2h pohdin/tutkin asiaa ja 3-4h aloin muuttamaan koodia |
 | | 1.5 | Yritin saada tkcalenderia toimimaan, jotta expiry datea ei tarvitsisi kirjoittaa manuaalisesti. Ehkä ei toimi poetryn takia, mutta odotan kommenttia discordista, koska netistä en löytänyt apua.|
 | 24.4 | 4 | Sain perusohjelman toimimaan kokonaisuudessaan. |
-| 25.5 | 2 | Tein tarvittavat asiat Viikko5 palautuksia varten. |
-|yht.|42||
+| 25.4 | 2 | Tein tarvittavat asiat Viikko5 palautuksia varten. |
+| 29.4 | 3 | Pääosin tutkin mitä voisin vielä lisätä työhön, joka olisi järkevää ja veisi riittävästi aikaa (n. 36 tuntia jäljellä). Ideoin ja kokeilin paria asiaa itse harjoitustyön ulkopuolella, koska en ole tehnyt mitään ohjelmaa ennen tätä (pääosin log-in juttuja, mutta myös tkcalendarin kanssa ihmetelyä)
+| 30.4 | 3 | Keskityin pyrkimään hoitamaan toiminnallisuus ideoita vaatimusmäärittelystä. |
+|yht.|-||
