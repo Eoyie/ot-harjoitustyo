@@ -22,4 +22,5 @@
 | 25.4 | 2 | Tein tarvittavat asiat Viikko5 palautuksia varten. |
 | 29.4 | 3 | Pääosin tutkin mitä voisin vielä lisätä työhön, joka olisi järkevää ja veisi riittävästi aikaa (n. 36 tuntia jäljellä). Ideoin ja kokeilin paria asiaa itse harjoitustyön ulkopuolella, koska en ole tehnyt mitään ohjelmaa ennen tätä (pääosin log-in juttuja, mutta myös tkcalendarin kanssa ihmetelyä)
 | 30.4 | 3 | Tuotteet tulevat nyt ohjelman avattua vanhentumis järjestyksen mukaan (Meni kauan, kun yritin esim. Treeviewin kautta sortata, joka ei onnistunut minun parent, child ryhmittelyn vuoksi.). Samalla lisäsin yhden error viestin, joka estää laittamasta ei päivämääriä, joka pilaa sortauksen. |
-|yht.|-||
+| 2.5 | 5 | Tein pieniä muutoksia ja korjasin vanhoja ongelmia. Lisäsin/tein viikon palautukseen liittyviä asioita.|
+|yht.|53||
