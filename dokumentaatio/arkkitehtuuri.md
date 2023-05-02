@@ -48,6 +48,10 @@ Itse toiminnallisuudesta vastaa ExpService, joka käyttää näitä luokkia. Luo
 
 ### Tulen varmaan vaihtamaan luokkakaavion sisältämään myös ExpServicen, koska itse Exp luokallahan ei ole kommentoja. Tämä siis muuttuu!!
 
+**Alustava kuvaus**
+
+ExpService saa käyttöliittymältä kommennot, jotka se siirtää tällä hetkellä ExpRepositoriolle tallennettavaksi/muutettavaksi tiedostoon. Tiedot myös muunnetaan Exp luokaksi, jotta ExpRepositorion tallennettavaa listaa on helppo käyttää ja muokata
+
 ## Repositories
 **Tämäkin muuttuu...**
 ExpRepository tallentaa tuotteet CSV-tiedostoon.
