@@ -43,6 +43,7 @@ Voit lisätä tuotteen "Add Product:" osiosta näin:
 - Voit merkata tuotteen käytetyksi valitsemalla tuotteen listasta ja painamalla "Product Used".
 
 - Voit poistaa tuotteen kokonaan valitsemalla tuotteen listasta ja painamalla "Delete Product".
+  - HOX! Nämä 3 kommentoa voi tehdä monelle tuotteelle, jos ne valitaan shiftin avulla. 
 
 - **Jos lista on pidempi, kuin tämän ikkuna** voit liikkua listassa ylös ja alas käyttämällä näppäimistön nuolinäppäimiä. (Luultavasti lisään myös scrollbarin)
 
