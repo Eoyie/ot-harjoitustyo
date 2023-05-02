@@ -4,7 +4,7 @@ Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta. Voit 
 ! **En vielä kirjoita asioita, jotka eivät ole ohjelmassa** !
 
 ## Dokumentaatio
-[ Changelog ](dokumentaatio/changelog.md) ⋆｡°✩ [ Tuntikirjanpito ](dokumentaatio/tuntikirjanpito.md) ₊˚✩ [ Vaatimusmäärittely ](dokumentaatio/vaatimusmaarittely.md) ✩°｡⋆ [ Arkkitehtuuri ](dokumentaatio/arkkitehtuuri.md) ₊˚✩ [ Release ](https://github.com/Eoyie/ot-harjoitustyo/releases/tag/viikko5) 
+[ Changelog ](dokumentaatio/changelog.md) ⋆｡°✩ [ Tuntikirjanpito ](dokumentaatio/tuntikirjanpito.md) ₊˚✩ [ Vaatimusmäärittely ](dokumentaatio/vaatimusmaarittely.md) ✩°｡⋆ [ Arkkitehtuuri ](dokumentaatio/arkkitehtuuri.md) ₊˚✩ [ Release ](https://github.com/Eoyie/ot-harjoitustyo/releases/tag/viikko5) ⋆｡°✩ [ Käyttöohje ](dokumentaatio/kayttoohje.md) ✩°｡⋆
 
 ## Asennus
 1. Ladattuasi tiedoston koneelle, siirry terminaalissa tämän hakemistoon ja asenna riippuvuudet komennolla:
