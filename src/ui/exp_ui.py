@@ -1,7 +1,8 @@
-from tkinter import ttk, constants
+from tkinter import ttk, constants, messagebox
 from services.exp_service import exp_service
 from tkinter import *
 from tkcalendar import *
+from dateutil.parser import parse
 
 class ExpView:              
     def __init__(self, root):
@@ -151,10 +152,14 @@ class ExpView:
         p_name = self.entry_box.get()
         p_date = self.date.get()
 
-        p = exp_service.add_product(p_name,p_date,p_type)
-        self.tree.insert(parent=p_type, index='end', iid=self.count, text="",
-                                 values=(p.id,p.product,p.date))
-        self.count += 1
+        try:
+            parse(p_date, fuzzy=False)
+            p = exp_service.add_product(p_name,p_date,p_type)
+            self.tree.insert(parent=p_type, index='end', iid=self.count, text="",
+                                    values=(p.id,p.product,p.date))
+            self.count += 1
+        except ValueError:
+            messagebox.showerror('Entry Error', 'Error: Entered invalid date')
         
         self.date.delete(0,END)
         self.date.insert(0,"dd-mm-yyyy")

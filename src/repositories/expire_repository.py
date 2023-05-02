@@ -1,6 +1,7 @@
 from pathlib import Path
 from entities.exp import Exp
 from config import EXP_FILE_PATH
+from datetime import datetime
 
 class ExpRepository:
     def __init__(self,file_path):
@@ -28,9 +29,9 @@ class ExpRepository:
                 #username = part[5]
 
                 #user = user_repository.find_by_username(username) if username else None
-
                 products.append(Exp(product, date, p_type, p_id))
 
+        products.sort(key=lambda x: datetime.strptime(x.date,'%d-%m-%Y')) 
         return products
 
     def create(self, product):
