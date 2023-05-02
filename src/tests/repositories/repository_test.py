@@ -4,7 +4,7 @@ from entities.exp import Exp
 
 class TestExpRepository(unittest.TestCase):
     def setUp(self):
-        exp_repository.delete_all()
+        self.n = len(exp_repository.find_all())
 
         self.maito = Exp('Maito',"20-02-2002",0)
         self.leipa = Exp('Leipä',"02-12-2020",2)
@@ -13,8 +13,9 @@ class TestExpRepository(unittest.TestCase):
         exp_repository.create(self.maito)
         products = exp_repository.find_all()
 
-        self.assertEqual(len(products), 1)
+        self.assertEqual(len(products), (self.n+1))
         self.assertEqual(products[0].product, 'Maito')
+        exp_repository.delete_product(self.maito.id)
 
     def test_delete_product(self):
         exp_repository.create(self.maito)
@@ -22,10 +23,10 @@ class TestExpRepository(unittest.TestCase):
         exp_repository.delete_product(self.leipa.id)
         products = exp_repository.find_all()
 
-        self.assertEqual(len(products), 1)
+        self.assertEqual(len(products), (self.n+1))
         self.assertEqual(products[0].product, 'Maito')
 
         exp_repository.delete_product(self.maito.id)
         products = exp_repository.find_all()
 
-        self.assertEqual(len(products), 0)
+        self.assertEqual(len(products), self.n)

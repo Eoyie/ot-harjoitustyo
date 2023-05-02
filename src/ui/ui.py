@@ -2,12 +2,18 @@ from tkinter import ttk, constants
 from ui.exp_ui import ExpView
 
 class UI:
+    """Sovelluksen käyttöliittymästä vastaava luokka."""
+
     def __init__(self, root):
         self.root = root
         self.current_view = None
 
     def start(self):
-
+        """Luokan konstruktori, joka luo uuden käyttöliittymästä vastaavan luokan.
+        Args:
+            root: 
+                TKinter-elementti, jonka sisään käyttöliittymä alustetaan.
+        """
         #self.show_exp_view()
         self.show_test_view()
 
@@ -40,6 +46,7 @@ class UI:
         #self.current_view.pack() '''
     
     def show_test_view(self):
+        """Väliaikainen test_view, koska ei ole olemassa käyttäjää"""
         self.hide_current_view()
 
         self.current_view = ExpView(self.root)

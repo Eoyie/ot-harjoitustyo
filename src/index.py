@@ -2,6 +2,7 @@ from tkinter import Tk
 from ui.ui import UI
 
 def main():
+    """Sovelluksen aloittava luokka."""
     window = Tk()
     window.title("Expire application (test stage)")
     window.geometry("500x450")

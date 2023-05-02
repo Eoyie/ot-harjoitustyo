@@ -1,10 +1,16 @@
 from pathlib import Path
+from datetime import datetime
 from entities.exp import Exp
 from config import EXP_FILE_PATH
-from datetime import datetime
 
 class ExpRepository:
+    """Tuotteisiin liittyvistä tietokantaoperaatioista vastaava luokka."""
+
     def __init__(self,file_path):
+        """Luokan konstruktori.
+        Args:
+            file_path: Polku tiedostoon, johon tehtävät tallennetaan.
+        """
         self.file_path = file_path
 
     def ensure_file_exists(self):
@@ -14,6 +20,10 @@ class ExpRepository:
         return self.read()
 
     def read(self):
+        """Lukee tuotteet tietokannasta ja muuttaa ne listaksi
+        
+        Returns:
+                Kaikki tuotteet listana"""
         products = []
         self.ensure_file_exists()
 
@@ -31,10 +41,16 @@ class ExpRepository:
                 #user = user_repository.find_by_username(username) if username else None
                 products.append(Exp(product, date, p_type, p_id))
 
-        products.sort(key=lambda x: datetime.strptime(x.date,'%d-%m-%Y')) 
+        products.sort(key=lambda x: datetime.strptime(x.date,'%d-%m-%Y'))
         return products
 
     def create(self, product):
+        """Lisää tuotteen tietokantaan
+        
+        Args:
+            product: Tallenettava tuote Exp-oliona.
+        Returns:
+            Tallennettu tuote Exp-oliona."""
 
         products = self.find_all()
 
@@ -45,6 +61,10 @@ class ExpRepository:
         return product
 
     def write(self, products):
+        """Kirjoittaa tuotteen/tuotteet CVS-tiedostoon
+        
+        Args:
+            products: Lista kaikista tuotteista."""
         self.ensure_file_exists()
 
         with open(self.file_path, "w", encoding="utf-8") as file:

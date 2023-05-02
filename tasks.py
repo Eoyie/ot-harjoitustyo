@@ -2,7 +2,7 @@ from invoke import task
 
 @task
 def build(ctx):
-    ctx.run("python src/build.py")
+    ctx.run("python3 src/build.py")
 
 @task
 def start(ctx):
