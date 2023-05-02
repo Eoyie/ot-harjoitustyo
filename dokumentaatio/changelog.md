@@ -17,3 +17,10 @@
 - Lisätä tuotteen tämän nimen, tyypin ja päivän kanssa.
 - Voi kokonaan poistaa tuotteen (Kaikki tapahtuu nyt normaalisti oikean id:n kanssa ym.)
 - Voi siirtää tuotteen toisele parentille treeviewissä, jolloin tuote on "käytetty/vanhentunut"
+
+## Viikko 4 (kurssin viikko 7)
+
+- Lisätty error viestejä jos tuotteen nimi ei ole olemassa, alle 3 kirjainta, yli 14 (tämä mahtuu tällä hetkellä kohtaan treeviewissä), jos päivä ei ole päivä.
+- Lisätty file osuuteen "Delete All"
+- Lisätty mahdollisuus siirtää/poistaa monta tuotetta, jos ne valitaan listasta shiftin avulla.
+- Tuotteet ovat nyt päivämäärän mukaan listassa (Täällä hetkellä päivittää listan vasta, kun se on käynnistetty uudelleen...)
