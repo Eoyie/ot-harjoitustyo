@@ -25,4 +25,5 @@
 | 2.5 | 5 | Tein pieniä muutoksia ja korjasin vanhoja ongelmia. Lisäsin/tein viikon palautukseen liittyviä asioita.|
 | 7.5 | 4 | Vaihdoin kalenterin systeemiä (Uuden kanssa meni aikaa etsiä ja saada toimimaan kauan...). Lisäsin automaattisen vanhenemis järjestyksen, vanhentuneiden tarkistuksen ja kyselyn, jos yrittää lisätä jo vanhenneen tuotteen. Aloin suunnittelemaan kalenteri näkymää |
 | 8.5 | 2 | Tein kalenteri näkymän, jossa näkyy tuotteet kalenterissa (Ei vielä täysin valmis, varmaan laitan eri värejä yms.). Aloitin myös käyttäjä osuuden, mutta en vielä tiedä haluanko salasanan vai en (Yleisesti en halua, mutta sql tietokannasta saisi pisteen? Varmaan jätän pois, koska en vaan tykkää ideasta...)
-|yht.|59||
+| 9.5 | 2.5 | Lisäsin Qty, joka vielä vähän reistailee. Korjailin kalenteria ja lisäsin värejä. Aloin rakentaa käyttäjän lisäämis käyttöliittymää |
+|yht.|61.5||
