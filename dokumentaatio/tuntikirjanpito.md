@@ -27,4 +27,5 @@
 | 8.5 | 2 | Tein kalenteri näkymän, jossa näkyy tuotteet kalenterissa (Ei vielä täysin valmis, varmaan laitan eri värejä yms.). Aloitin myös käyttäjä osuuden, mutta en vielä tiedä haluanko salasanan vai en (Yleisesti en halua, mutta sql tietokannasta saisi pisteen? Varmaan jätän pois, koska en vaan tykkää ideasta...)
 | 9.5 | 2.5 | Lisäsin Qty, joka vielä vähän reistailee. Korjailin kalenteria ja lisäsin värejä. Aloin rakentaa käyttäjän lisäämis käyttöliittymää |
 | | 0.5 | Otin hieman mielipiteitä vastaan (esittelin ohjelman ja keskustelin tästä) siitä, että miltä käyttöliittymän kannattaisi näyttää, Esim. puhetta onko Expire Product näppäin tarvittava, kun nyt ohjelma tekee sen itse ja tarvitseeko "spoiled" version vain menee huonoksi, eikä ole "vanhentunut"??|
-|yht.|62||
+| 10.5 | 6 | Korjasin Qty ja muuttelin asioita, kuten menuun ja lisäsin joitain error viestejä. Kuitenkin suurin osa ajasta meni csv tiedostojen siirtämisen käyttäjän omaan directoryyn data directoryssä. Ei meinannut MILLÄÄN toimia. Nyt sain sen toimimaan, mutta ei läheskään valmis (Ei vielä salasanoja!!). Samalla sotkin aika paljon koodia eri kokeilujen takia, joten huomenna pitää sekin siivota.
+|yht.|68||
