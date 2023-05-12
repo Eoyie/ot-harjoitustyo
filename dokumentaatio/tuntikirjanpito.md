@@ -7,7 +7,7 @@
 | 3.4 | 0,5 | tutkin miten aloittaa ohjelmaa, mutta en muuttanut mitään |
 | 4.4 | 4 | tutkin lisää ohjelman tekemistä, koska koin aloittamisen hyvin vaikeaksi. **!!Tässä vaiheessa osa on siis hyvin samanlaista, kuin referenssisovellus, koska testailin!!** Tein pari luokkaa, joilla ei vielä toimivuutta. Lisäksi vähän pääohjelmaa ja siihen testit ja yritin aloittaa UI puolta. Tein muut tehtävänannon osuudet, kuten invoke ja changelog|
 | 8.4 | 1 | Tein paperille hahmotteluja koodista |
-| | 1 | Ajattelin lisää koodin perustoimivuuksia. Tutkin kurssin vaatimuuksia harjoitustyöstä ja muutin joitakin suunnitelmia tämän perusteella | 
+| | 1 | Ajattelin lisää koodin perustoimivuuksia. Tutkin kurssin vaatimuuksia harjoitustyöstä ja muutin joitakin suunnitelmia tämän perusteella | s
 | 9.4 | 2 | Yritin saada toimintoa SQLalchemyn ja Flaskin kautta, mutta en saanut mitään toimimaan. En halunnut käyttää samaa, kuin referessisovelluksessa, mutta en näköjään osaa muuta |
 | | 3 | Koska en saanut muuta toimimaan tein referenssi ja oppimateriaalin perusteella tietokantaa ym. |
 | 10.4 | 4 | Edistin koodia, mutta ei vielä toimi (jää repositoryyn kiinni) |
@@ -28,4 +28,5 @@
 | 9.5 | 2.5 | Lisäsin Qty, joka vielä vähän reistailee. Korjailin kalenteria ja lisäsin värejä. Aloin rakentaa käyttäjän lisäämis käyttöliittymää |
 | | 0.5 | Otin hieman mielipiteitä vastaan (esittelin ohjelman ja keskustelin tästä) siitä, että miltä käyttöliittymän kannattaisi näyttää, Esim. puhetta onko Expire Product näppäin tarvittava, kun nyt ohjelma tekee sen itse ja tarvitseeko "spoiled" version vain menee huonoksi, eikä ole "vanhentunut"??|
 | 10.5 | 6 | Korjasin Qty ja muuttelin asioita, kuten menuun ja lisäsin joitain error viestejä. Kuitenkin suurin osa ajasta meni csv tiedostojen siirtämisen käyttäjän omaan directoryyn data directoryssä. Ei meinannut MILLÄÄN toimia. Nyt sain sen toimimaan, mutta ei läheskään valmis (Ei vielä salasanoja!!). Samalla sotkin aika paljon koodia eri kokeilujen takia, joten huomenna pitää sekin siivota.
-|yht.|68||
+| 11.5 | 4.5 | Edistin hieman loginnia. Toimii muuten, mutta ei salasanoja. Siivosin koodia. Tein Edit näkymää. Käyttöliittymä on siinä valmis, mutta ei vielä muuta tuotteen tietoja itse tiedostoon. 
+|yht.|72.5||
