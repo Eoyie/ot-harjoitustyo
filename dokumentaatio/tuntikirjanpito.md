@@ -29,4 +29,5 @@
 | | 0.5 | Otin hieman mielipiteitä vastaan (esittelin ohjelman ja keskustelin tästä) siitä, että miltä käyttöliittymän kannattaisi näyttää, Esim. puhetta onko Expire Product näppäin tarvittava, kun nyt ohjelma tekee sen itse ja tarvitseeko "spoiled" version vain menee huonoksi, eikä ole "vanhentunut"??|
 | 10.5 | 6 | Korjasin Qty ja muuttelin asioita, kuten menuun ja lisäsin joitain error viestejä. Kuitenkin suurin osa ajasta meni csv tiedostojen siirtämisen käyttäjän omaan directoryyn data directoryssä. Ei meinannut MILLÄÄN toimia. Nyt sain sen toimimaan, mutta ei läheskään valmis (Ei vielä salasanoja!!). Samalla sotkin aika paljon koodia eri kokeilujen takia, joten huomenna pitää sekin siivota.
 | 11.5 | 4.5 | Edistin hieman loginnia. Toimii muuten, mutta ei salasanoja. Siivosin koodia. Tein Edit näkymää. Käyttöliittymä on siinä valmis, mutta ei vielä muuta tuotteen tietoja itse tiedostoon. 
-|yht.|72.5||
+| 12.5 | 5.5 | Edistelin kaikkia eilisen juttuja + create user. Meni paljon aikaa, kun update lopetti toiminnan. En oikeastaan vieläkään ymmärrä miksi ei toiminut. Paljon aikaa myös manuaalisiin valintoihin "qty" perusteella...... En vielä ole varmistanut, että toimii automaattisen tarkistuksen kanssa...
+|yht.|78||
