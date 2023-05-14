@@ -4,7 +4,7 @@ from ui.ui import UI
 def main():
     """Sovelluksen aloittava luokka."""
     window = Tk()
-    window.title("Expire application (test stage)")
+    window.title("Expire application")
 
 
     ui_view = UI(window)
