@@ -3,23 +3,23 @@
 
 ## Sovelluksen tarkoitus
 
-Suunnitelmissa olisi sovellus, johon voi laittaa eri elintarvikkeiden vanhentumis ja parasta ennen tietoja listaan. Jos kurssin puolesta mahdollista toimisi sovellus oikeassa ajassa ja ilmottaisi vanhentuvista tuotteista. Mutta jos liian vaikeaa niin voi jättää pois. Muuten yleisesti voi lisätä tuotteita ja myös itse poistaa niitä, kun tuote on käytetty. Myös jos mahdollista voisi ryhmitellä tuotteita. Mutta yleisesti kehitetään sen verran, kun kurssi suo.
+Exp-Sovelluksen avulla voit pitää kirjaa omista tuotteistasi ja niiden vanhentumisesta. Sovellusta voi käyttää monella käyttäjällä, eli pitää eri listoja yllä.
 
 ## Käyttäjät
 
-Suunnitelmissa olisi pitää vain yksikäyttäjä, jolla olisi tarvitut oikeudet ns. kaikkeen. Toisin sanoen yksityiskäyttöön, jos kuitenkin kurssi vaatii ns. pääkäyttäjää voi sellaisen lisätä.
+Käyttäjät ovat kaikki saman arvoisia, joten pääkäyttäjää ei ole. Käyttäjät voi tosiaan nähdä myös erilaisena tapana pitää monta listaa.
 
 ## Toiminnallisuus
+- Käyttäjä voi luoda eri käyttäjiä, joilla on kaikilla oma listansa
+- Käyttäjä voi myös poistaa käyttäjiä
 
-Selitin jo hieman aiemmin ideaa, mutta tässä lista:
-
-- Voi lisätä tuotteita ja näiden pvm. # **Tehty**
-- Tuotteet tulevat sovellukseen siinä järjestyksessä, mikä ensin vanhenee. # **Tehty**, mutta vielä vasta, kun ohjelma avataan.
-- Toimisi oikeassa ajassa mahdollisesti tai käyttäjä itse poistaa tuotteet näiden käytettyään. # Myös osittain. **Voi itse poistaa** 
-- Mahdollisesti kirjautuminen, jossa käyttäjätunnus ja salasana. # Jos aikaa lisätään, mutta en näe oikeastaan tarvetta... #
+- Käyttäjä voi lisätä tuotteen
+- poistaa kaikki tuotteet
+- poistaa yhden
+- muuttaa tuotteiden tiloja
+- muuttaa kokonaan tuotteen tietoja
+- ja nähdä tuotteet kalenteri näkymässä.
 
 ## Jatkokehitysideat
 
-- Voisi kirjata mitä tuotteille tapahtui (Käytettiin, pilaantui jne.) # **Tehty**
-- Ryhmittely # **Tehty**
-- Tietojen editointi/muutaminen
+- Montakin asiaa, mutta aika ei valitettavasti riittänyt. Ehkä pääosin salasanat.
