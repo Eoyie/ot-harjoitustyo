@@ -1,9 +1,5 @@
 # Käyttöohje
 
-## Sisäänkirjautuminen (Tulevaisuudessa)
-
-- 
-
 ## Ohjelman käynnistäminen
 
 1. Ladattuasi tiedoston koneelle, siirry terminaalissa tämän hakemistoon ja asenna riippuvuudet komennolla:
@@ -11,12 +7,7 @@
 ```
 poetry install
 ```
-
-2. Alusta ohjelma käyttöä varten komennolla:
-```
-poetry run invoke build
-```
-3. Ja viimeisenä käynnistä ohjelma komennolla:
+2. Ja käynnistä ohjelma komennolla:
 ```
 poetry run invoke start
 ```
@@ -36,16 +27,18 @@ Voit lisätä tuotteen "Add Product:" osiosta näin:
 
 ## Tuotteiden muu käsittely
 
-**Tällä hetkellä**
-
 - Voit merkata tuotteen vanhetuneeksi valitsemalla tuotteen listasta ja painamalla "Product Expired".
 
 - Voit merkata tuotteen käytetyksi valitsemalla tuotteen listasta ja painamalla "Product Used".
 
 - Voit poistaa tuotteen kokonaan valitsemalla tuotteen listasta ja painamalla "Delete Product".
-  - HOX! Nämä 3 kommentoa voi tehdä monelle tuotteelle, jos ne valitaan shiftin avulla. 
+  - HOX! Nämä 3 kommentoa voi tehdä monelle tuotteelle, jos ne valitaan shiftin avulla.
+ 
+- Qty toimii seuraavasti: Voit valita haluatko, että jokaista tuotetta käytetään kaikki "All", jolloin ohjelma ei huomioi qty:n laitettua määrää, "Each", jolloin jokaiselta valitulta tuotteelta lähtee haluttu määrä ja "Total" jolloin tämä miinustaa ylhäältä alas niin monta kertaa yhteensä, eli voi käyttää jonkin tuotteen kokonaan ja toisen ei yhtään.
 
 - **Jos lista on pidempi, kuin tämän ikkuna** voit liikkua listassa ylös ja alas käyttämällä näppäimistön nuolinäppäimiä. (Luultavasti lisään myös scrollbarin)
+
+- Voit myös editoida tuotteita valitsemalla se listasta ja painamalla "Edit Product"
 
 ## Komentorivitoiminnot
 
