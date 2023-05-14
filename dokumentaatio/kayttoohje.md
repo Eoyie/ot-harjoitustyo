@@ -13,7 +13,7 @@ poetry run invoke start
 ```
 ## Käyttäjät
 
-Käyttäjät toimivat varsin yksinkertaisesti. Eli voit lisätä käyttäjän ja lisättyäsi valita sen listasta ja mennä tuote näkymään. Käyttäjän voi myös poistaa.
+Käyttäjät toimivat varsin yksinkertaisesti. Eli voit lisätä käyttäjän ja lisättyäsi valita sen listasta ja mennä tuote näkymään. Käyttäjän voi myös poistaa. Pois kirjaudutaan ylä menusta.
 
 ## Tuotteiden lisäys
 
@@ -34,7 +34,7 @@ Voit lisätä tuotteen "Add Product:" osiosta näin:
 
 - Voit merkata tuotteen käytetyksi valitsemalla tuotteen listasta ja painamalla "Product Used".
 
-- Voit poistaa tuotteen kokonaan valitsemalla tuotteen listasta ja painamalla "Delete Product".
+- Voit poistaa tuotteen kokonaan valitsemalla tuotteen listasta ja painamalla "Delete Product" (Tai poistaa kaikka valitsemalla tämän ylä menusta).
   - HOX! Nämä 3 kommentoa voi tehdä monelle tuotteelle, jos ne valitaan shiftin avulla.
  
 - Qty toimii seuraavasti: Voit valita haluatko, että jokaista tuotetta käytetään kaikki "All", jolloin ohjelma ei huomioi qty:n laitettua määrää, "Each", jolloin jokaiselta valitulta tuotteelta lähtee haluttu määrä ja "Total" jolloin tämä miinustaa ylhäältä alas niin monta kertaa yhteensä, eli voi käyttää jonkin tuotteen kokonaan ja toisen ei yhtään.
@@ -42,6 +42,8 @@ Voit lisätä tuotteen "Add Product:" osiosta näin:
 - **Jos lista on pidempi, kuin tämän ikkuna** voit liikkua listassa ylös ja alas käyttämällä näppäimistön nuolinäppäimiä.
 
 - Voit myös editoida tuotteita valitsemalla se listasta ja painamalla "Edit Product"
+
+- Voit tutkiskella tuotteia myös kalenteri näkymästä, johon pääsee ylä menuun valinnoista.
 
 ## Komentorivitoiminnot
 
