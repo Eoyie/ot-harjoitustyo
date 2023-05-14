@@ -34,7 +34,7 @@ Sovelluslogiikkaan kuuluu vain yksi luokka, koska käyttäjillä ei ole salasano
         - product
         - date
         - qty
-        - type
+        - type }
 ```
 
 
