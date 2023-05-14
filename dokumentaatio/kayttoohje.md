@@ -39,7 +39,7 @@ Voit lisätä tuotteen "Add Product:" osiosta näin:
  
 - Qty toimii seuraavasti: Voit valita haluatko, että jokaista tuotetta käytetään kaikki "All", jolloin ohjelma ei huomioi qty:n laitettua määrää, "Each", jolloin jokaiselta valitulta tuotteelta lähtee haluttu määrä ja "Total" jolloin tämä miinustaa ylhäältä alas niin monta kertaa yhteensä, eli voi käyttää jonkin tuotteen kokonaan ja toisen ei yhtään.
 
-- **Jos lista on pidempi, kuin tämän ikkuna** voit liikkua listassa ylös ja alas käyttämällä näppäimistön nuolinäppäimiä. (Luultavasti lisään myös scrollbarin)
+- **Jos lista on pidempi, kuin tämän ikkuna** voit liikkua listassa ylös ja alas käyttämällä näppäimistön nuolinäppäimiä.
 
 - Voit myös editoida tuotteita valitsemalla se listasta ja painamalla "Edit Product"
 
