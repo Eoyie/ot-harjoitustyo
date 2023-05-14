@@ -30,4 +30,6 @@
 | 10.5 | 6 | Korjasin Qty ja muuttelin asioita, kuten menuun ja lisäsin joitain error viestejä. Kuitenkin suurin osa ajasta meni csv tiedostojen siirtämisen käyttäjän omaan directoryyn data directoryssä. Ei meinannut MILLÄÄN toimia. Nyt sain sen toimimaan, mutta ei läheskään valmis (Ei vielä salasanoja!!). Samalla sotkin aika paljon koodia eri kokeilujen takia, joten huomenna pitää sekin siivota.
 | 11.5 | 4.5 | Edistin hieman loginnia. Toimii muuten, mutta ei salasanoja. Siivosin koodia. Tein Edit näkymää. Käyttöliittymä on siinä valmis, mutta ei vielä muuta tuotteen tietoja itse tiedostoon. 
 | 12.5 | 5.5 | Edistelin kaikkia eilisen juttuja + create user. Meni paljon aikaa, kun update lopetti toiminnan. En oikeastaan vieläkään ymmärrä miksi ei toiminut. Paljon aikaa myös manuaalisiin valintoihin "qty" perusteella...... En vielä ole varmistanut, että toimii automaattisen tarkistuksen kanssa...
-|yht.|78||
+| 13.5 | 8 | Korjailin eilisen asioita, mutta koodi meni jumiin..|
+| 14.5 | 7 | Tein tänään kaiken loppuun mihin kykenin. Koodin rikkoutuminen pilasi aikataulinu kunnolla... Toivon vain, että lopullinen versio toimii. |
+|yht.|86||
