@@ -30,3 +30,4 @@
 - Lisätty käyttäjät, editointi ja automaattinen vanhentuminen. 
 - Korjattu pieniä asioita ja lisätty lisää error viestejä ym.
 - Lisätty myös qty perjaate tuotteiden siirtelyyn.
+- Lisätty kalenteri näkymä
