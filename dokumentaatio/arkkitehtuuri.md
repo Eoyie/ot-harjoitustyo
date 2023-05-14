@@ -27,7 +27,7 @@ Kyseiset pakkaukset sisältävät näiden alueiden koodit:
 
 Sovelluslogiikkaan kuuluu vain yksi luokka, koska käyttäjillä ei ole salasanoja. Siispä tämä Exp:
 
-```mermaid
+```
   classDiagram
     class Exp{
         - id
