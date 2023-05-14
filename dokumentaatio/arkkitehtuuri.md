@@ -59,10 +59,24 @@ Sisältö vastaa seuraavaa: id ; tuotteen nimi ; vanhentumis päivämäärä ; t
 
 Tässä vielä luokka/pakkauskaavio, joka kuvastaa ohjelman kokonaisuutta:
 ![Pakkausrakenne](./kuvat/alustava_paakaavio.png)
+### UI
+- Product-lista
+- Muokkaa tuotetta
+- Kalenteri
+- Valitse käyttäjä
+- Luo käyttäjä
+
 
 ## Päätoiminnallisuudet
 
-### Paljon lisää tänne
+- Käyttäjä voi luoda eri käyttäjiä, joilla on kaikilla oma listansa
+- Käyttäjä voi myös poistaa käyttäjiä
+- Käyttäjä voi lisätä tuotteen
+- poistaa kaikki tuotteet
+- poistaa yhden
+- muuttaa tuotteiden tiloja
+- muuttaa kokonaan tuotteen tietoja
+- ja nähdä tuotteet kalenteri näkymässä.
 
 ### Tuotteen lisääminen
 
