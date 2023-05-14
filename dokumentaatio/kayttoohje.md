@@ -11,6 +11,9 @@ poetry install
 ```
 poetry run invoke start
 ```
+## Käyttäjät
+
+Käyttäjät toimivat varsin yksinkertaisesti. Eli voit lisätä käyttäjän ja lisättyäsi valita sen listasta ja mennä tuote näkymään. Käyttäjän voi myös poistaa.
 
 ## Tuotteiden lisäys
 
