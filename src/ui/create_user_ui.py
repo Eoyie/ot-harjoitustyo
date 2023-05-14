@@ -48,14 +48,10 @@ class CreateUserView:
         u_label = ttk.Label(master=input_frame, text="Username:")
         self.u_entry = ttk.Entry(master=input_frame)
 
-        p_label = ttk.Label(master=input_frame, text="Password:")
-        self.p_entry = ttk.Entry(master=input_frame)
-
         h_label.grid(row=1,column=0,pady=10)
         u_label.grid(row=2,column=0)
         self.u_entry.grid(row=3,column=0)
-        p_label.grid(row=4,column=0)
-        self.p_entry.grid(row=5,column=0)
+
     def initialize_buttons(self):
 
         button_frame = Frame(self._frame)
@@ -69,19 +65,15 @@ class CreateUserView:
 
     def add_user(self):
 
-        username = self.u_entry.get()
-        password = self.p_entry.get()
+        username = self.u_entry.get() 
         self.u_entry.delete(0,END)
 
-        if username is None or password is None:
-            messagebox.showerror('Entry Error', 'Error: Missing username and/or password')
+        if len(username) == 0 :
+            messagebox.showerror('Entry Error', 'Error: Missing username')
             self.u_entry.delete(0,END)
             return
         
-        self.u_entry.delete(0,END)
-        self.p_entry.delete(0,END)
-        
-        if username == "data":
+        if username == "data" or username == "test":
             messagebox.showerror('User Error', 'Error: Invalid username')
             return
         elif len(username) < 3:
@@ -94,7 +86,8 @@ class CreateUserView:
             messagebox.showerror('User Error', 'Error: Username contains special letters')
             return 
         
-        response = exp_service.create_user(username, password)
+        response = exp_service.create_user(username)
+        
         if response is False:
             messagebox.showerror('User Error', 'Error: User already exists')
             return 

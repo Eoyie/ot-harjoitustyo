@@ -1,5 +1,4 @@
 from entities.exp import Exp
-from entities.user import User
 
 from repositories.user_repository import (
     user_repository as default_user_repository )
@@ -25,73 +24,42 @@ class ExpService:
         self.exp_repository = exp_repository
         self.user_repository = user_repository
 
-        self.user = None
-
-    def create_user(self, username, password):
+    def create_user(self, username):
         """Luo uuden käyttäjän ja tarvittaessa kirjaa sen sisään.
 
         Args:
-            username: Merkkijonoarvo, joka on kirjautuvan käyttäjän username.
-            password: Merkkijonoarvo, joka on kirjautuvan käyttäjän salasana."""
-
-        existing_user = self.user_repository.find_by_username(username)
-        print(existing_user)
-        if existing_user:
+            username: Merkkijonoarvo, joka on käyttäjän username."""
+        result = self.user_repository.ensure_user_folder_exists(username)
+        if result is True:
             return False
-        print('test')
-        user = self.user_repository.create(User(username, password))
-        self.make_user_folder(username)
-        self._user = user
-
-        return True
-
-    def make_user_folder(self, username):
 
         self.user_repository.make_user_folder(username)
-
-    def ensure_user_folder_exists(self, username):
-
         return self.user_repository.ensure_user_folder_exists(username)
 
-    def login(self, username, password):
+    def login(self, username):
         """Kirjaa käyttäjän sisään.
 
         Args:
             username: Merkkijonoarvo, joka on kirjautuvan käyttäjän username.
-            password: Merkkijonoarvo, joka on kirjautuvan käyttäjän salasana.
-        Returns:
-            Kirjautunut käyttäjä User-olion muodossa.
-            Ja vastaukset mahdollisista ongelmista.
         """
-        u_exception = False
-        user = self.user_repository.find_by_username(username)
-        if not user:
-            return 0
-        if user.password != password:
-            return 1
-        response = self.ensure_user_folder_exists(username)
-        if not response:
-            self.make_user_folder(username)
-            u_exception = 2
+
+        return self.user_repository.ensure_user_folder_exists(username)
+
+    def get_all_users(self):
+        """Hakee kaikki käyttäjät
         
-        self.user = user
-        return u_exception
-
-    def get_users(self):
-        """Palauttaa kaikki käyttäjät.
-
         Returns:
-            Palauttaa listan käyttäjistä User-olioina.
-        """
-        return self._user_repository.find_all()
-    
-    def get_current_user(self):
-        """Paluttaa kirjautuunen käyttäjän.
+            Kaikki käyttäjät listassa"""
 
-        Returns:
-            Kirjautunut käyttäjä User-olion muodossa.
-        """
-        return self._user
+        return self.user_repository.give_all_users()
+
+    def delete_user(self,user):
+        """Poistaa käyttäjän
+        
+        Args:
+            Käyttäjän nimi"""
+
+        self.user_repository.delete_user(user)
 
     def update_file_path(self, username):
 

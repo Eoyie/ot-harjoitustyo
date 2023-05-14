@@ -1,8 +1,9 @@
+import os
 from pathlib import Path
 from datetime import datetime
 from entities.exp import Exp
 from config import MAIN_FILE_PATH, EXP_FILENAME
-import os
+
 
 class ExpRepository:
     """Tuotteisiin liittyvistä tietokantaoperaatioista vastaava luokka."""
@@ -13,6 +14,7 @@ class ExpRepository:
             file_path: Polku tiedostoon, johon tehtävät tallennetaan.
         """
         self.def_file_path = def_file_path
+        self.file_path = None
 
     def update_file_path(self, username):
         """Päivittää reitin käyttäjän tiedostoon."""
@@ -32,6 +34,7 @@ class ExpRepository:
         for product in products:
             if product.id == p_id:
                 return product
+        return False
 
     def find_all(self):
         """Välittäjä, joka palauttaa readin listan.
@@ -58,14 +61,11 @@ class ExpRepository:
                 date = part[2]
                 qty = part[3]
                 p_type = part[4]
-                #username = part[5]
-
-                #user = user_repository.find_by_username(username) if username else None
                 products.append(Exp(product, date, qty, p_type, p_id))
 
         products.sort(key=lambda x: datetime.strptime(x.date,'%d-%m-%Y'))
         return products
-    
+
     def write(self, products):
         """Kirjoittaa tuotteen/tuotteet CVS-tiedostoon.
         
@@ -101,7 +101,7 @@ class ExpRepository:
         Args:
             product: Tallennettava tuote Exp-oliona.
             old_p_id: Merkkijonoarvo, joka on päivitettävän tuotteen vanha id."""
-        
+
         products = self.find_all()
         new_products = []
         for old_product in products:
@@ -113,68 +113,69 @@ class ExpRepository:
 
     def set_expired(self, p_id, p_qty):
         """Asettaa tuotteen vanhentuneeksi.
-        
+
         Args:
             p_id: Merkkijonoarvo, joka on muutettavan tuotteen id
-            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan
-        Returns:
-            Päivitetty tuote vaihdettuna vanhentuneeksi."""
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan"""
+
         return self.set_stage(p_id,3,p_qty)
 
     def set_used(self, p_id, p_qty):
         """Asettaa tuotteen käytetyksi.
-                
+
         Args:
             p_id: Merkkijonoarvo, joka on muutettavan tuotteen id
-            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan
-        Returns:
-            Päivitetty tuote vaihdettuna käytetyksi."""
-        return self.set_stage(p_id,4,p_qty)
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan."""
+
+        self.set_stage(p_id,4,p_qty)
 
     def set_stage(self, p_id, stage, p_qty):
         """Muuttaa tuotteen tilan.
-        
+
         Args:
             p_id: Merkkijonoarvo, joka on muutettavan tuotteen id.
             stage: Integralarvo, joka on tila mihin tuote muutetaan
-            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan.
-        Returns:
-            Päivitetty tuote halutulla tilalla."""
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan."""
         products = self.find_all()
+
         for product in products:
             if product.id == p_id:
-
                 stage_id = product.id + str(stage)
-                Y = False
-                for product_2 in products:
-                    if product_2.id == stage_id:
-                        Y = True
-                        product_2.qty = int(product_2.qty) + int(p_qty)
-                        self.write(products)
-                    
-                if not Y:
+                already_id = self.second_check(products,stage_id,p_qty)
+                already_product = product
+                break
 
-                    product.qty = int(product.qty) - int(p_qty)
-                    if product.qty == 0:
-                        product.qty = p_qty
-                        product.type = stage
-                        self.write(products)
-                        return
-                    
-                    product_copy = Exp(product.product, product.date, p_qty, stage, stage_id)
+        if not already_id:
 
-                    products.append(product_copy)
-                    for product in products: print(product.product,product.type)
-                    self.write(products)
-                    return
-                
-        if Y:
-            for product in products:
-                if product.id == p_id:
-                    product.qty = int(product.qty) - int(p_qty)
-                    self.write(products)
-                    return
+            already_product.qty = int(already_product.qty) - int(p_qty)
+            if already_product.qty == 0:
+                already_product.qty = p_qty
+                already_product.type = stage
+                self.write(products) 
+                return
 
+            product_copy = Exp(already_product.product, already_product.date,
+                               p_qty, stage, stage_id)
+            products_copy = list(products)
+            products_copy.append(product_copy)
+            self.write(products_copy)
+            return
+
+        for product in products:
+            if product.id == p_id:
+                product.qty = int(product.qty) - int(p_qty)
+                self.write(products)
+                return
+
+    def second_check(self,products,stage_id,p_qty):
+        """Apu funktio pylintin sääntöjen vuoksi. 
+        Tarkistaa onko muutettu tuote jo olemssa."""
+        for product_2 in products:
+            if product_2.id == stage_id:
+                product_2.qty = int(product_2.qty) + int(p_qty)
+                self.write(products)
+                return True
+        return False
 
     def delete_product(self, p_id):
         """Poistaa tuotteen.
@@ -206,7 +207,6 @@ class ExpRepository:
         check_same_id = {}
         check_help = {}
         for product in products:
-            #print(product.type, product.product)
             if product.id[-1] == "3":
                 check_same_id[product.id[:len(product.id)-1]] = product.id[-1]
                 check_help[product.id] = int(product.qty)
@@ -224,5 +224,5 @@ class ExpRepository:
         self.write(products)
         return del_products
 
-    
+
 exp_repository = ExpRepository(MAIN_FILE_PATH)

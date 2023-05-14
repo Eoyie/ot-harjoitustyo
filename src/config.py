@@ -11,8 +11,4 @@ except FileNotFoundError:
 EXP_FILENAME = os.getenv("EXP_FILENAME") or "exp.csv"
 EXP_FILE_PATH = os.path.join(dirname, "..", "data", EXP_FILENAME)
 
-DATABASE_FILENAME = os.getenv("DATABASE_FILENAME") or "database.sqlite"
-DATABASE_FILE_PATH = os.path.join(dirname, "..", "data", DATABASE_FILENAME)
-
 MAIN_FILE_PATH = os.path.join(dirname, "..", "data")
-
