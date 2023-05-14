@@ -24,3 +24,9 @@
 - Lisätty file osuuteen "Delete All"
 - Lisätty mahdollisuus siirtää/poistaa monta tuotetta, jos ne valitaan listasta shiftin avulla.
 - Tuotteet ovat nyt päivämäärän mukaan listassa (Täällä hetkellä päivittää listan vasta, kun se on käynnistetty uudelleen...)
+
+## Viikko 5 (kurssin viikko 8-9)
+
+- Lisätty käyttäjät, editointi ja automaattinen vanhentuminen. 
+- Korjattu pieniä asioita ja lisätty lisää error viestejä ym.
+- Lisätty myös qty perjaate tuotteiden siirtelyyn.
