@@ -1,8 +1,10 @@
 # Arkkitehtuurikuvaus
-**Tulen uudistamaan molemmat kuvat lopulliseen työhön!**
+
 ## Rakenne
 
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria. Tämä kuva näyttää pakkausrakenteen ja jokaisen pakkauksen sisällöt ovat mainituna tämän alla.
+
+**Vaikkapa kuvassa lukee alustava, päätyi tämä lopulta olemaan oikea, mutta tekstiä ei valitettavasti enään saa pois.**
 
 ![Pakkausrakenne](./kuvat/Exp_alustava_pakkauskaavio.png)
 
@@ -14,14 +16,16 @@ Kyseiset pakkaukset sisältävät näiden alueiden koodit:
 - entities = sovelluksen käyttämiä objekteja kuvaamaan tuotteita (myöhemmin myös käyttäjiä)
 
 ## Käyttöliittymä
-**Tämä tulee muuttumaan käyttäjän lisäämisen myötä, joten en kirjoita paljoa**
 - Product-lista
+- Muokkaa tuotetta
 - Kalenteri
+- Valitse käyttäjä
+- Luo käyttäjä
 
  
 ## Sovelluslogiikka
 
-Sovelluslogiikka toimii seuraavasti luokkakaaviossa näytettyjen luokkien User ja Exp kanssa:
+Sovelluslogiikkaan kuuluu vain yksi luokka, koska käyttäjillä ei ole salasanoja. Siispä tämä Exp:
 
 ```mermaid
   classDiagram
@@ -30,31 +34,18 @@ Sovelluslogiikka toimii seuraavasti luokkakaaviossa näytettyjen luokkien User j
         - id
         - product
         - date
+        - qty
         - type
-        add_product()
-        delete_product()
-        set_expired()
-        set_used()
-     }
-     class User{
-        - username
-        - password
-        login(username, password)
-        logout()
-     }
 ```
 
-Itse toiminnallisuudesta vastaa ExpService, joka käyttää näitä luokkia. Luokkakaaviossa on näytetty joitakin kommentoja, joita molemmilla luokilla on mitä ExpService käyttää.
 
-### Tulen varmaan vaihtamaan luokkakaavion sisältämään myös ExpServicen, koska itse Exp luokallahan ei ole kommentoja. Tämä siis muuttuu!!
+**Kuvaus**
 
-**Alustava kuvaus**
-
-ExpService saa käyttöliittymältä kommennot, jotka se siirtää tällä hetkellä ExpRepositoriolle tallennettavaksi/muutettavaksi tiedostoon. Tiedot myös muunnetaan Exp luokaksi, jotta ExpRepositorion tallennettavaa listaa on helppo käyttää ja muokata
+ExpService saa käyttöliittymältä kommennot, jotka se siirtää ExpRepositoriolle ja UserRepositorille tallennettavaksi/muutettavaksi tiedostoon ja oikeaan kansioon. Tiedot myös muunnetaan Exp luokaksi, jotta ExpRepositorion tallennettavaa listaa on helppo käyttää ja muokata.
 
 ## Repositories
-**Tämäkin muuttuu...**
-ExpRepository tallentaa tuotteet CSV-tiedostoon.
+- ExpRepository tallentaa tuotteet CSV-tiedostoon.
+- UserRepository luo käyttäjien perusteella kansiota, missä CSV-tiedostot sijaitsevat
 
 ### Tiedostot
 
