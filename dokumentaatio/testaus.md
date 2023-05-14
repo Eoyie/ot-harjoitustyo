@@ -15,7 +15,9 @@ Repositorio-luokkia ExpRepository ja UserRepository testataan "test" kansion kan
 
 ### Testauskattavuus
 
-![](./kuvat/testi.png)
+Testikattavuus on yhtensä 79%. Tästä jääneitä exp_serviceä ja expire_repositorya oli joitakin kohtia, joissa koodia olisi pitänyt muuttaa testejä varten, koska niiden vaikutus on suunniteltu näkyvän vasta käyttöliittymä tasolla
+
+![](./kuvat/Testi.png)
 
 ## Järjestelmätestaus
 
