@@ -51,9 +51,9 @@ ExpService saa käyttöliittymältä kommennot, jotka se siirtää ExpRepositori
 
 CVS-tiedostoon tallennetut tuotteet ovat seuraavaa formaattia:
 ```
-a93eabc9-5b0a-40d6-8ac8-af2cfb8ee431;Testi;02-05-2023;0 
+a93eabc9-5b0a-40d6-8ac8-af2cfb8ee431;Testi;02-05-2023;0;0
 ```
-Sisältö vastaa seuraavaa: id ; tuotteen nimi ; vanhentumis päivämäärä ; tila (0 = jääkaappi, 1 = pakaste, 2 = kaappi, 3 = vanhentunut, 4 = käytetty) ; *tulevaisuudessa käyttäjä*
+Sisältö vastaa seuraavaa: id ; tuotteen nimi ; vanhentumis päivämäärä ; määrä ; tila (0 = jääkaappi, 1 = pakaste, 2 = kaappi, 3 = vanhentunut, 4 = käytetty) ; *
 
 ## Kokonaisuus
 
