@@ -32,4 +32,4 @@
 | 12.5 | 5.5 | Edistelin kaikkia eilisen juttuja + create user. Meni paljon aikaa, kun update lopetti toiminnan. En oikeastaan vieläkään ymmärrä miksi ei toiminut. Paljon aikaa myös manuaalisiin valintoihin "qty" perusteella...... En vielä ole varmistanut, että toimii automaattisen tarkistuksen kanssa...
 | 13.5 | 8 | Korjailin eilisen asioita, mutta koodi meni jumiin..|
 | 14.5 | 7 | Tein tänään kaiken loppuun mihin kykenin. Koodin rikkoutuminen pilasi aikataulinu kunnolla... Toivon vain, että lopullinen versio toimii. |
-|yht.|86||
+|yht.|93||
