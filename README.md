@@ -1,7 +1,6 @@
 # ExpireApp
 
-Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta. Voit lisätä tuotteen jääkaappiin, pakastimeen tai kaappiin ja merkitä, kun se on joko käytetty tai vanhentunut.
-! **En vielä kirjoita asioita, jotka eivät ole ohjelmassa** !
+Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta. Voit lisätä tuotteen jääkaappiin, pakastimeen tai kaappiin ja merkitä, kun se on joko käytetty tai vanhentunut. Voit myös muokata tuotteita tai nähdä ne kalenterissa. Sovelluksessa pystyy käyttämään eri käyttäjiä ja luoda/poistaa niitä.
 
 ## Dokumentaatio
 [ Changelog ](dokumentaatio/changelog.md) ⋆｡°✩ [ Tuntikirjanpito ](dokumentaatio/tuntikirjanpito.md) ₊˚✩ [ Vaatimusmäärittely ](dokumentaatio/vaatimusmaarittely.md) ✩°｡⋆ [ Arkkitehtuuri ](dokumentaatio/arkkitehtuuri.md) ₊˚✩ [ Releasit ](https://github.com/Eoyie/ot-harjoitustyo/releases) ⋆｡°✩ [ Käyttöohje ](dokumentaatio/kayttoohje.md) ✩°｡⋆
@@ -12,12 +11,7 @@ Tällä sovelluksella voi pitää kirjaa elintarvikkeiden vanhentumisesta. Voit 
 ```
 poetry install
 ```
-
-2. Alusta ohjelma käyttöä varten komennolla:
-```
-poetry run invoke build
-```
-3. Ja viimeisenä käynnistä ohjelma komennolla:
+2. Käynnistä ohjelma komennolla:
 ```
 poetry run invoke start
 ```
