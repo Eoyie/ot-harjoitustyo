@@ -29,7 +29,6 @@ Sovelluslogiikkaan kuuluu vain yksi luokka, koska käyttäjillä ei ole salasano
 
 ```mermaid
   classDiagram
-    Exp "*" --> "1" User
     class Exp{
         - id
         - product
