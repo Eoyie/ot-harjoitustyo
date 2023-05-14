@@ -6,9 +6,9 @@ class User:
     Attributes:
         product: Merkkijonoarvo, joka on käyttäjän username.
     """
-    def __init__(self, username, u_id=None):
+    def __init__(self, username, password):
         """Luokan konstruktori, joka luo uuden tehtävän
         
         Kirjoitan myöhemmin~"""
         self.username = username
-        self.id = u_id or str(uuid.uuid4())
+        self.password = password

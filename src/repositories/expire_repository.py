@@ -7,24 +7,44 @@ import os
 class ExpRepository:
     """Tuotteisiin liittyvistä tietokantaoperaatioista vastaava luokka."""
 
-    def __init__(self, file_path):
+    def __init__(self, def_file_path):
         """Luokan konstruktori.
         Args:
             file_path: Polku tiedostoon, johon tehtävät tallennetaan.
         """
-        self.file_path = file_path
+        self.def_file_path = def_file_path
+
+    def update_file_path(self, username):
+        """Päivittää reitin käyttäjän tiedostoon."""
+        self.file_path = os.path.join(self.def_file_path, username, EXP_FILENAME)
 
     def ensure_file_exists(self):
+        """Varmistaa käyttäjän tiedoston olemassa olon."""
         Path(self.file_path).touch()
 
+    def find_one(self, p_id):
+        """Löytää halutun tuotteen.
+        
+        Returns:
+                Haluttu tuote Exp-oliona."""
+        products = self.find_all()
+
+        for product in products:
+            if product.id == p_id:
+                return product
+
     def find_all(self):
+        """Välittäjä, joka palauttaa readin listan.
+        
+        Returns:
+                Kaikki tuotteet Exp-oliona listassa."""
         return self.read()
 
     def read(self):
-        """Lukee tuotteet tietokannasta ja muuttaa ne listaksi
+        """Lukee tuotteet tietokannasta ja muuttaa ne listaksi.
         
         Returns:
-                Kaikki tuotteet listana"""
+                Kaikki tuotteet Exp-oliona listassa."""
         products = []
         self.ensure_file_exists()
 
@@ -45,6 +65,19 @@ class ExpRepository:
 
         products.sort(key=lambda x: datetime.strptime(x.date,'%d-%m-%Y'))
         return products
+    
+    def write(self, products):
+        """Kirjoittaa tuotteen/tuotteet CVS-tiedostoon.
+        
+        Args:
+            products: Lista kaikista tuotteista."""
+        self.ensure_file_exists()
+
+        with open(self.file_path, "w", encoding="utf-8") as file:
+            for product in products:
+                row = f"{product.id};{product.product};{product.date};{product.qty};{product.type}"
+
+                file.write(row+"\n")
 
     def create(self, product):
         """Lisää tuotteen tietokantaan
@@ -62,65 +95,134 @@ class ExpRepository:
 
         return product
 
-    def write(self, products):
-        """Kirjoittaa tuotteen/tuotteet CVS-tiedostoon
+    def update(self, product, old_p_id):
+        """Päivittää yhden tuotteen tiedot.
         
         Args:
-            products: Lista kaikista tuotteista."""
-        self.ensure_file_exists()
+            product: Tallennettava tuote Exp-oliona.
+            old_p_id: Merkkijonoarvo, joka on päivitettävän tuotteen vanha id."""
+        
+        products = self.find_all()
+        new_products = []
+        for old_product in products:
+            if old_p_id == old_product.id:
+                new_products.append(product)
+            else:
+                new_products.append(old_product)
+        self.write(new_products)
 
-        with open(self.file_path, "w", encoding="utf-8") as file:
-            for product in products:
-                row = f"{product.id};{product.product};{product.date};{product.qty};{product.type}"
+    def set_expired(self, p_id, p_qty):
+        """Asettaa tuotteen vanhentuneeksi.
+        
+        Args:
+            p_id: Merkkijonoarvo, joka on muutettavan tuotteen id
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan
+        Returns:
+            Päivitetty tuote vaihdettuna vanhentuneeksi."""
+        return self.set_stage(p_id,3,p_qty)
 
-                file.write(row+"\n")
+    def set_used(self, p_id, p_qty):
+        """Asettaa tuotteen käytetyksi.
+                
+        Args:
+            p_id: Merkkijonoarvo, joka on muutettavan tuotteen id
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan
+        Returns:
+            Päivitetty tuote vaihdettuna käytetyksi."""
+        return self.set_stage(p_id,4,p_qty)
 
-    def set_expired(self, p_id):
-        return self.set_stage(p_id,3)
-
-    def set_used(self, p_id):
-        return self.set_stage(p_id,4)
-
-    def set_stage(self, p_id, stage):
+    def set_stage(self, p_id, stage, p_qty):
+        """Muuttaa tuotteen tilan.
+        
+        Args:
+            p_id: Merkkijonoarvo, joka on muutettavan tuotteen id.
+            stage: Integralarvo, joka on tila mihin tuote muutetaan
+            p_qty: Merkkijonoarvo, joka kuinka suuri osa tuotteesta muutetaan.
+        Returns:
+            Päivitetty tuote halutulla tilalla."""
         products = self.find_all()
         for product in products:
             if product.id == p_id:
-                product.type = stage
-                s_product = product
 
-                self.write(products)
-                return s_product
+                stage_id = product.id + str(stage)
+                Y = False
+                for product_2 in products:
+                    if product_2.id == stage_id:
+                        Y = True
+                        product_2.qty = int(product_2.qty) + int(p_qty)
+                        self.write(products)
+                    
+                if not Y:
 
-    def delete_product(self, exp_id):
+                    product.qty = int(product.qty) - int(p_qty)
+                    if product.qty == 0:
+                        product.qty = p_qty
+                        product.type = stage
+                        self.write(products)
+                        return
+                    
+                    product_copy = Exp(product.product, product.date, p_qty, stage, stage_id)
+
+                    products.append(product_copy)
+                    for product in products: print(product.product,product.type)
+                    self.write(products)
+                    return
+                
+        if Y:
+            for product in products:
+                if product.id == p_id:
+                    product.qty = int(product.qty) - int(p_qty)
+                    self.write(products)
+                    return
+
+
+    def delete_product(self, p_id):
+        """Poistaa tuotteen.
+        
+        Args:
+            p_id: Tuotteen id."""
         products = self.find_all()
         products_left = []
 
-        for i in products:
-            if i.id != exp_id:
-                products_left.append(i)
+        for product in products:
+            if product.id != p_id:
+                products_left.append(product)
 
         self.write(products_left)
 
     def delete_all(self):
+        """Poistaa kaikki tuotteet."""
         self.write([])
 
-    def automatic_expire(self, username):
-
+    def automatic_expire(self):
+        """Päivittää tuotteiden vanhentumiset päivämäärän mukaan.
+        
+        Returns:
+            Päivitetyt tuotteet listassa Exp-oliona."""
         self.ensure_file_exists()
         today = datetime.today().strftime('%d-%m-%Y')
 
-        exp_products = []
         products = self.find_all()
+        check_same_id = {}
+        check_help = {}
+        for product in products:
+            #print(product.type, product.product)
+            if product.id[-1] == "3":
+                check_same_id[product.id[:len(product.id)-1]] = product.id[-1]
+                check_help[product.id] = int(product.qty)
+
+        del_products = []
         for product in products:
             if product.date < today and product.type != "4":
+                if product.id in check_same_id:
+                    stage = check_same_id[product.id]
+                    del_product_id = product.id+str(stage)
+                    product.qty = int(product.qty) + int(check_help[del_product_id])
+                    del_products.append(del_product_id)
                 product.type = 3
-                exp_products.append(product.product)
-        self.write(products)
-        return exp_products
-    
-    def update_file_path(self, username):
 
-        self.file_path = os.path.join(self.file_path, username, EXP_FILENAME)
+        self.write(products)
+        return del_products
 
     
 exp_repository = ExpRepository(MAIN_FILE_PATH)

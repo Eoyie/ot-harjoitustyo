@@ -5,10 +5,11 @@ from tkinter import *
 
 class LoginView:
 
-    def __init__(self, root, handle_login):
+    def __init__(self, root, handle_login, handle_create_user):
         self.root = root
         self.frame = None
         self.handle_login = handle_login
+        self.handle_create_user = handle_create_user
 
         self.u_entry = None
         self.p_entry = None
@@ -28,70 +29,63 @@ class LoginView:
 
         self.frame = ttk.Frame(master=self.root)
 
-        a = ttk.Button(master=self.frame, text = "Create a User", command=self.add_user)
-        h_label = ttk.Label(master=self.frame, text="Login")
+        self.initialize_input()
+        self.initialize_buttons()
 
-        u_label = ttk.Label(master=self.frame, text="Username")
-        self.u_entry = ttk.Entry(master=self.frame)
+    def initialize_input(self):
 
-        p_label = ttk.Label(master=self.frame, text="Password")
-        self.p_entry = ttk.Entry(master=self.frame)
+        input_frame = Frame(self.frame)
+        input_frame.pack(padx=10,pady=10)
 
-        button = ttk.Button(master=self.frame, text="Login",command=self.login)
-        b = ttk.Label(master=self.frame, text="Tää ei vielä tee mitään, koska en osaa yhdistää koodiin ^^")
-        c = ttk.Label(master=self.frame, text="(Ja en ole aloittanut käyttäjä osuutta)")
+        h_label = ttk.Label(master=input_frame, text="===== Login =====", font=("Helvetica", 14))
 
-        a.grid(row=0,column=0)
-        h_label.grid(row=1,column=0)
+        u_label = ttk.Label(master=input_frame, text="Username:")
+        self.u_entry = ttk.Entry(master=input_frame)
+
+        p_label = ttk.Label(master=input_frame, text="Password:")
+        self.p_entry = ttk.Entry(master=input_frame)
+
+        h_label.grid(row=1,column=0,pady=10)
         u_label.grid(row=2,column=0)
         self.u_entry.grid(row=3,column=0)
         p_label.grid(row=4,column=0)
         self.p_entry.grid(row=5,column=0)
-        button.grid(row=6,column=0)
-        b.grid(row=7,column=0)
-        c.grid(row=8,column=0)
+    
+    def initialize_buttons(self):
 
-    def username_error_checker(self, username):
+        button_frame = Frame(self.frame)
+        button_frame.pack(padx=10,pady=10)
 
-        if username == "data":
-            messagebox.showerror('User Error', 'Error: Invalid username')
-            return False
-        elif len(username) < 3:
-            messagebox.showerror('User Error', 'Error: Username too short: min 3 characters')
-            return False
-        elif len(username) > 20:
-            messagebox.showerror('User Error', 'Error: Username too long: max 20 characters')
-            return False
-        elif set(username).difference(self.allowed_characters):
-            messagebox.showerror('User Error', 'Error: Username contains special letters')
-            return False
+        c_button = ttk.Button(master=button_frame, text = "Create a User", command=self.add_user)
+        l_button = ttk.Button(master=button_frame, text="Login",command=self.login)
         
-        return True
+        c_button.grid(row=0,column=0,padx=5)
+        l_button.grid(row=0,column=1,padx=5)
+
 
     def login(self):
         username = self.u_entry.get()
-        self.u_entry.delete(0,END)
-        
-        if self.username_error_checker(username) == False:
+        password = self.p_entry.get()
+        if len(username) == 0 or len(password) == 0:
+            messagebox.showerror('Entry Error', 'Error: Missing username and/or password')
             return
-            
-        response = exp_service.login(username)
-        if response == False:
+        
+        response = exp_service.login(username,password)
+        
+        if response == 0:
             messagebox.showerror('User Error', 'Error: User does not exists')
             return
+        elif response == 1:
+            messagebox.showerror('User Error', 'Error: Invalid password')
+            return
+        elif response == 2:
+            messagebox.showinfo('!User!', "Your old products couldn't be found: Created a new folder ")
         
+        self.u_entry.delete(0,END)
+        self.p_entry.delete(0,END)
+
         self.handle_login(username)
 
     def add_user(self):
-        username = self.u_entry.get()
-        self.u_entry.delete(0,END)
 
-        response = exp_service.ensure_user_folder_exists(username)
-        if response == True:
-            messagebox.showerror('User Error', 'Error: Username is already taken')
-            return
-
-        if self.username_error_checker(username) == False:
-            return
-
-        exp_service.make_user_folder(username)
+        self.handle_create_user()

@@ -7,7 +7,7 @@ from datetime import datetime
 class ExpView:
     """Tuotteiden käsittelystä vastaava luokka."""
 
-    def __init__(self, root, handle_logout, user):
+    def __init__(self, root, handle_logout, handle_edit, user):
         """Luokan konstruktori. Luo uuden tuotenäkymän.
 
         Args:
@@ -19,15 +19,19 @@ class ExpView:
         self.root = root
         self.frame = None
         self.handle_logout = handle_logout
+        self.handle_edit = handle_edit
         self.user = user
 
         self.lb = None
         self.tree = None
         self.count = 5
 
-        self.add_frame = None
+        self.qty_options = None
+        self.qty_entry_box = None
+
         self.options = None
         self.date_entry = None
+        self.quantity_box = None
         self.cal = None
         self.date_window = None
         self.entry_box = None
@@ -44,13 +48,12 @@ class ExpView:
         self.frame.pack(fill=constants.X)
 
     def update_file_path(self, username):
-         
-         exp_service.update_file_path(username)
+        '''Päivittää repositorille oikean reitin'''
+        exp_service.update_file_path(username)
 
     def initialize(self):
         """Alustaa näkymät"""
         self.frame = ttk.Frame(master=self.root)
-        exp_service.set_user(self.user)
 
         self.initialize_treeview()
         self.initialize_buttons()
@@ -88,49 +91,63 @@ class ExpView:
         if products != None:
             for product in products:
                 self.tree.insert(parent=product.type, index='end', iid=self.count, text="",
-                                 values=(product.id, product.product,"1234", product.date))
+                                 values=(product.id, product.product, product.qty, product.date))
                 self.count += 1
 
     def initialize_buttons(self):
-        other_frame = Frame(self.frame)
-        other_frame.pack(pady=10)
+        button_frame = Frame(self.frame)
+        button_frame.pack(pady=1)
 
-        del_button = Button(other_frame, text="Delete Product", command=self.delete_product)
-        exp_button = Button(other_frame, text="Product Expired", command=self.set_expired)
-        used_button = Button(other_frame, text="Product Used", command=self.set_used)
+        del_button = Button(button_frame, text="Delete Product", command=self.delete_product)
+        edit_button = Button(button_frame, text="Edit product", command=self.edit_product)
+        exp_button = Button(button_frame, text="Product Expired", command=self.set_expired)
+        used_button = Button(button_frame, text="Product Used", command=self.set_used)
+
+        ql = Label(button_frame,text="Qty:",width=4)
+        self.qty_entry_box = Entry(button_frame, font="Courier, 10",width=5)
+        self.qty_options = StringVar(button_frame)
+        self.qty_options.set("All")
+        qty_opt = OptionMenu(button_frame, self.qty_options,
+                                "All","Each","Total")
 
         del_button.grid(row=0,column=1)
-        exp_button.grid(row=0,column=2,padx=10)
-        used_button.grid(row=0,column=3)
+        edit_button.grid(row=0,column=2,padx=10)
+        exp_button.grid(row=1,column=1,padx=10, pady=10)
+        used_button.grid(row=1,column=2,pady=10)
+        ql.grid(row=0,column=3,columnspan=2,padx=10)
+        self.qty_entry_box.grid(row=1,column=3,padx=10)
+        qty_opt.grid(row=1,column=4,pady=5)
 
 
     def initialize_entrybox(self):
-        self.add_frame = Frame(self.frame)
-        self.add_frame.pack(pady=10)
+        add_frame = Frame(self.frame)
+        add_frame.pack(pady=10)
 
-        al = Label(self.add_frame, text="Add Product:",
+        l = Label(add_frame, text="==================================",
+                   font=("Helvetica", 16), width=30,anchor='c')
+        al = Label(add_frame, text="Add Product:",
                    font=("Helvetica", 16), width=30,anchor='c')
 
-        pl = Label(self.add_frame,text="Product:",width=10)
-        self.entry_box = Entry(self.add_frame, font="Courier, 10")
+        pl = Label(add_frame,text="Product:",width=10)
+        self.entry_box = Entry(add_frame, font="Courier, 10")
 
-        tl = Label(self.add_frame,text="Type:",width=10)
-        self.entry_box = Entry(self.add_frame, font="Courier, 10")
-        self.options = StringVar(self.add_frame)
+        tl = Label(add_frame,text="Type:",width=10)
+        self.options = StringVar(add_frame)
         self.options.set("Fridge")
-        types = OptionMenu(self.add_frame, self.options,
+        types = OptionMenu(add_frame, self.options,
                                 "Fridge", "Freezer", "Pantry")
 
-        dl = Label(self.add_frame,text="Expiry date:", width=10)
-        self.date_entry = DateEntry(self.add_frame,selectmode="day",
+        dl = Label(add_frame,text="Expiry date:", width=10)
+        self.date_entry = DateEntry(add_frame,selectmode="day",
                             date_pattern="dd-mm-y")
         
-        ql = Label(self.add_frame,text="Quantity:",width=10)
-        self.quantity_box = Entry(self.add_frame,font="Courier, 10", width=5)
+        ql = Label(add_frame,text="Quantity:",width=10)
+        self.quantity_box = Entry(add_frame,font="Courier, 10", width=5)
         self.quantity_box.insert(0, 1)
         
-        add_button = Button(self.add_frame, text="Add Product", command=self.add_product)
-
+        add_button = Button(add_frame, text="Add Product", command=self.add_product)
+        
+        l.grid(row=0,column=0,columnspan=4,pady=10)
         al.grid(row=1,column=0,columnspan=4,pady=10)
         pl.grid(row=2,column=0)
         self.entry_box.grid(row=2,column=1)
@@ -185,8 +202,11 @@ class ExpView:
             messagebox.showerror('Entry Error', 'Error: Not entered quantity')
             return
         elif p_qty.isnumeric():
-            if len(p_name) > 1000:
+            if int(p_qty) > 1000:
                 messagebox.showerror('Entry Error', 'Error: Entered quantity is too big')
+                return
+            elif int(p_qty) < 1:
+                messagebox.showerror('Entry Error', 'Error: Entered quantity is 0 or negative')
                 return
         else: 
             messagebox.showerror('Entry Error', 'Error: Invalid quantity')
@@ -220,21 +240,79 @@ class ExpView:
         
     def set_expired(self):
         exp = self.tree.selection()
+        qty = self.qty_entry_box.get()
+        qty_setting = self.qty_options.get()
+        
+        if qty_setting != "All":
+            if qty is None:
+                messagebox.showerror('Entry Error', 'Error: Not entered quantity')
+                return
+            elif qty.isnumeric():
+                if int(qty) < 1:
+                    messagebox.showerror('Entry Error', 'Error: Entered quantity is 0 or negative')
+                    return
+            else: 
+                messagebox.showerror('Entry Error', 'Error: Invalid quantity')
+                return
+            qty = int(qty)
+        else: qty = 1
+
         for i in exp:
             if int(i) > 4:
                 exp_id = self.tree.item(i,'values')[0]
-                exp_service.set_product_expired(exp_id)
+                exp_qty = int(self.tree.item(i,'values')[2])
+                if exp_qty < qty or qty_setting == "All":
+                    exp_service.set_product_expired(exp_id, exp_qty)
+                elif qty < 1:
+                    self.update()
+                    return
+                else:
+                    exp_service.set_product_expired(exp_id,qty)
+
+                if qty_setting == "Total":
+                    qty -= exp_qty
         
         self.update()
 
     def set_used(self):
         up = self.tree.selection()
+        qty = self.qty_entry_box.get()
+        qty_setting = self.qty_options.get()
+        
+        if qty_setting != "All":
+            if qty is None:
+                messagebox.showerror('Entry Error', 'Error: Not entered quantity')
+                return
+            elif qty.isnumeric():
+                if int(qty) < 1:
+                    messagebox.showerror('Entry Error', 'Error: Entered quantity is 0 or negative')
+                    return
+            else: 
+                messagebox.showerror('Entry Error', 'Error: Invalid quantity')
+                return
+            qty = int(qty)
+        else: qty = 1
+
         for i in up:
             if int(i) > 4:
                 up_id = self.tree.item(i,'values')[0]
-                exp_service.set_product_used(up_id)
+                up_qty = int(self.tree.item(i,'values')[2])
+                if up_qty < qty or qty_setting == "All":
+                    exp_service.set_product_used(up_id, up_qty)
+                else:
+                    exp_service.set_product_used(up_id,qty)
+
+                if qty_setting == "Total":
+                    qty -= up_qty
 
         self.update()
+
+    def edit_product(self):
+        ep = self.tree.selection()
+        for i in ep:
+            if int(i) > 4:
+                ep_id = self.tree.item(i,'values')[0]
+                self.handle_edit(self.user, ep_id)
 
     def delete_all(self):
         
@@ -256,9 +334,12 @@ class ExpView:
         products = exp_service.get_all_products()
         if products != None:
             for product in products:
-                self.tree.insert(parent=product.type, index='end', iid=self.count, text="",
-                                 values=(product.id, product.product, product.qty,product.date))
-                self.count += 1
+                if int(product.qty) < 1:
+                    exp_service.delete_product(product.id)
+                else:
+                    self.tree.insert(parent=product.type, index='end', iid=self.count, text="",
+                                    values=(product.id, product.product, product.qty,product.date))
+                    self.count += 1
     
     def see_cal_view(self):
 
